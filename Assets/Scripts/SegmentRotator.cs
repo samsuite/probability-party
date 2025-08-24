@@ -33,12 +33,13 @@ public class SegmentRotator : MonoBehaviour {
             return 3 * finalApproachSpeed;
         }
     }
-    public float finalApproachSpeedMin = 0.2f;
-    public float finalApproachSpeedMax = 0.75f;
-    public float springDragMin = 1f;
-    public float springDragMax = 4f;
 
-    private float speedCurveRange {
+    private const float finalApproachSpeedMin = 0.15f;
+    private const float finalApproachSpeedMax = 0.75f;
+    private const float springDragMin = 2f;
+    private const float springDragMax = 4f;
+
+    private float windDownRange {
         get {
             return fullRotationDistance * windDownSpinCount;
         }
@@ -49,9 +50,9 @@ public class SegmentRotator : MonoBehaviour {
         }
     }
     public float currentSpeed { get; private set; }
-    private bool inFinalApproach;
-    public float springDrag;
-    public float finalApproachSpeed;
+    private bool inFinalApproach = true;
+    private float springDrag;
+    private float finalApproachSpeed;
     private float lastTimeSpinStarted;
 
     [SerializeField] private WheelSegment segmentPrefab;
@@ -98,6 +99,7 @@ public class SegmentRotator : MonoBehaviour {
             lastTimeSpinStarted = Time.time;
         }
 
+        currentTotalDistance %= fullRotationDistance;
         currentSpinID = Random.Range(100000000, 999999999);
         inFinalApproach = false;
         springDrag = Random.Range(springDragMin, springDragMax);
@@ -119,7 +121,12 @@ public class SegmentRotator : MonoBehaviour {
         for (int i = 0; i < numTotalSegments; i++) {
             WheelSegment newSegment = Instantiate(segmentPrefab, transform);
             newSegment.gameObject.name = segmentPrefab.gameObject.name;
-            string label = "NOPE";
+
+            int digits = Random.Range(1, 10);
+            string label = string.Empty;
+            for (int d = 0; d < digits; d++) {
+                label += Random.Range(0,9).ToString();
+            }
 
             if (i == numTotalSegments/2) {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
@@ -138,7 +145,7 @@ public class SegmentRotator : MonoBehaviour {
 
     private void MoveSegments () {
         float distanceThisFrame = currentSpeed * Time.deltaTime;
-        
+
         currentTotalDistance += distanceThisFrame;
         transform.position += Vector3.down * distanceThisFrame;
     }
@@ -188,7 +195,7 @@ public class SegmentRotator : MonoBehaviour {
 
     private void CalculateCurrentSpeed () {
         float remainingDistance = currentGoalDistance - currentTotalDistance;
-        float speedFraction = 1-Mathf.Clamp01((remainingDistance-finalApproachCurveRange) / speedCurveRange);
+        float windDownFraction = 1-Mathf.Clamp01((remainingDistance-finalApproachCurveRange) / windDownRange);
 
         if (remainingDistance < finalApproachCurveRange || inFinalApproach) {
             currentSpeed += (remainingDistance/finalApproachCurveRange) * springStrength * Time.deltaTime;
@@ -196,7 +203,7 @@ public class SegmentRotator : MonoBehaviour {
             inFinalApproach = true;
         }
         else {
-            float curveSample = speedCurve.Evaluate(speedFraction);
+            float curveSample = speedCurve.Evaluate(windDownFraction);
             currentSpeed = Mathf.Lerp(finalApproachSpeed, topSpeed, curveSample);
         }
 
