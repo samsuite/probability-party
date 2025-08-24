@@ -581,7 +581,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.30980393, g: 0.6117647, b: 0.42352942, a: 1}
+  m_BackGroundColor: {r: 0.85882354, g: 0.45490196, b: 0.101960786, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -744,10 +744,10 @@ MonoBehaviour:
   spiralSpeedMin: 5
   spiralSpeedMax: 15
   maxSpiralValue: 90
-  wobbleSpeedMin: 5
+  wobbleSpeedMin: 0
   wobbleSpeedMax: 15
-  maxWobbleValue: 1
-  perlinSpeed: 1
+  maxWobbleValue: 0.075
+  perlinSpeed: 20
   blurIntensityCurve:
     serializedVersion: 2
     m_Curve:
@@ -802,18 +802,18 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
