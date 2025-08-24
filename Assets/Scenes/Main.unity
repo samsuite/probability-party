@@ -449,8 +449,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 3234263512133539200, guid: a72bb55a6ac98bd49bae1f504c67472d, type: 3}
-  speed: 0
-  currentSpinID: 0
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.19038457
+    - serializedVersion: 3
+      time: 0.75
+      value: 0.5
+      inSlope: -1.4479301
+      outSlope: -1.4479301
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.5433452
+      outSlope: -2.5433452
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12158275
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &534349281
 GameObject:
   m_ObjectHideFlags: 0
