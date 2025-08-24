@@ -70,7 +70,7 @@ Shader "Custom/Wheel" {
                 float2 centeredUV = i.uv - float2(0.5, 0.5);
                 clip(0.5-distance(centeredUV,0));
 
-                float twirlAngle = (1-(distance(0, centeredUV)*2))*(3.1416/180) * _CenterAngleDifference;
+                float twirlAngle = (0.5-(distance(0, centeredUV)*2))*(3.1416/180) * _CenterAngleDifference;
                 float blurOffset = blueNoise * _SpeedBlur * maxSpeedBlurAngle;
                 twirlAngle += blurOffset;
 

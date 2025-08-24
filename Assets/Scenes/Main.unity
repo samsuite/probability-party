@@ -448,6 +448,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3633ed343595bc34ea5ea0e248086437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalApproachSpeedMin: 0.15
+  finalApproachSpeedMax: 0.75
+  springDragMin: 2
+  springDragMax: 4
+  springDrag: 2.9469514
+  finalApproachSpeed: 0.70931154
   segmentPrefab: {fileID: 3234263512133539200, guid: a72bb55a6ac98bd49bae1f504c67472d, type: 3}
   speedCurve:
     serializedVersion: 2
@@ -707,6 +713,7 @@ GameObject:
   - component: {fileID: 1512904265}
   - component: {fileID: 1512904264}
   - component: {fileID: 1512904263}
+  - component: {fileID: 1512904266}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -782,6 +789,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 168.75}
+--- !u!114 &1512904266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512904261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c70785bb594f44b1f53f17248ffc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotator: {fileID: 530635717}
+  renderer: {fileID: 1512904263}
+  blurSpeedMin: 0
+  blurSpeedMax: 15
+  maxBlurValue: 0.1
+  spiralSpeedMin: 5
+  spiralSpeedMax: 15
+  maxSpiralValue: 90
+  blurIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spiralIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1739867774
 GameObject:
   m_ObjectHideFlags: 0
