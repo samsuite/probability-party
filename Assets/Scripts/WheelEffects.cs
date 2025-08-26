@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WheelEffects : MonoBehaviour {
 
-    [SerializeField] private SegmentRotator rotator;
+    [SerializeField] private WheelController rotator;
     [SerializeField] private new MeshRenderer renderer;
     [Space]
     public float blurSpeedMin;

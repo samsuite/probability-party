@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SegmentRotator : MonoBehaviour {
+public class WheelController : MonoBehaviour {
 
     private const int numTotalSegments = 16;
     private float segmentHeight;
@@ -24,6 +24,7 @@ public class SegmentRotator : MonoBehaviour {
     private const float rampUpDuration = 0.2f;
     private const float windDownSpinCount = 5;
     private const float finalApproachSpinCount = 1/32f;
+    private const float finalApproachMaxDuration = 5f;
     private const int numTotalSpinsMin = 6;
     private const int numTotalSpinsMax = 10;
 
@@ -54,12 +55,20 @@ public class SegmentRotator : MonoBehaviour {
     private float springDrag;
     private float finalApproachSpeed;
     private float lastTimeSpinStarted;
+    private float timeStartedFinalApproach;
 
     [SerializeField] private WheelSegment segmentPrefab;
     [SerializeField] private AnimationCurve speedCurve;
 
+    private ActivityProfile[] allActivities;
+
 
     private void Start () {
+        allActivities = Resources.LoadAll<ActivityProfile>("Activities");
+        foreach (ActivityProfile activity in allActivities) {
+            Debug.Log(activity.name);
+        }
+
         RectTransform segmentPrefabRect = segmentPrefab.GetComponent<RectTransform>();
         segmentHeight = segmentPrefabRect.rect.height;
 
@@ -74,6 +83,7 @@ public class SegmentRotator : MonoBehaviour {
         selectedSegmentY = canvasTopY - ((numTotalSegments / 2)-1) * segmentHeightWorldSpace;
 
         StartCoroutine(TriggerLateStart());
+
     }
 
     private void LateStart () {
@@ -198,9 +208,13 @@ public class SegmentRotator : MonoBehaviour {
         float windDownFraction = 1-Mathf.Clamp01((remainingDistance-finalApproachCurveRange) / windDownRange);
 
         if (remainingDistance < finalApproachCurveRange || inFinalApproach) {
+            if (!inFinalApproach) {
+                inFinalApproach = true;
+                timeStartedFinalApproach = Time.time;
+            }
+
             currentSpeed += (remainingDistance/finalApproachCurveRange) * springStrength * Time.deltaTime;
             currentSpeed *= ( 1 - Time.deltaTime * springDrag);
-            inFinalApproach = true;
         }
         else {
             float curveSample = speedCurve.Evaluate(windDownFraction);
@@ -209,6 +223,14 @@ public class SegmentRotator : MonoBehaviour {
 
         float rampUpCoefficient = Mathf.Clamp01((Time.time - lastTimeSpinStarted)/rampUpDuration);
         currentSpeed *= rampUpCoefficient;
+
+        if (inFinalApproach) {
+            if (Time.time - timeStartedFinalApproach > finalApproachMaxDuration) {
+                // stop the wheel completely a few seconds after the final approach starts.
+                // this eliminates any tiny drift
+                currentSpeed = 0;
+            }
+        }
     }
 
     private IEnumerator TriggerLateStart () {
