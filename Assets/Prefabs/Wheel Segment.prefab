@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.4152, y: 0}
-  m_SizeDelta: {x: -70.9624, y: -12}
+  m_AnchoredPosition: {x: 25.599998, y: -0.0000019073486}
+  m_SizeDelta: {x: -70.9624, y: -8.3461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5308842244735955963
 CanvasRenderer:
@@ -428,11 +428,11 @@ MonoBehaviour:
   backgroundImage: {fileID: 4216352945400076449}
   borderImage: {fileID: 2006997339043701854}
   fadeImage: {fileID: 7237229553149728595}
-  bgColorOdd: {r: 0.9339623, g: 0.7705677, b: 0.20705767, a: 1}
-  fadeColorOdd: {r: 0.8584906, g: 0.4550927, b: 0.10123708, a: 1}
+  bgColorOdd: {r: 0.93333334, g: 0.78500897, b: 0.28, a: 1}
+  fadeColorOdd: {r: 0.7924528, g: 0.51117426, b: 0.26539695, a: 1}
   textColorOdd: {r: 0.5660378, g: 0.19040824, b: 0.088109665, a: 1}
-  bgColorEven: {r: 0.9433962, g: 0.36844146, b: 0.20024922, a: 1}
-  fadeColorEven: {r: 0.6039216, g: 0.16862744, b: 0.27307013, a: 1}
+  bgColorEven: {r: 0.94509804, g: 0.43325284, b: 0.28352943, a: 1}
+  fadeColorEven: {r: 0.6039216, g: 0.18117648, b: 0.28400636, a: 1}
   textColorEven: {r: 0.34901962, g: 0.12156862, b: 0.17717934, a: 1}
   hasBeenDuplicated: 0
   spinID: 0

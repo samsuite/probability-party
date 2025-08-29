@@ -17,9 +17,16 @@ public class WheelController : MonoBehaviour {
         }
     }
 
-    private float currentTotalDistance;
+    public float currentTotalDistance;
     private float currentGoalDistance;
     private int currentSpinID;
+    public int numCompletedRotations;
+
+    public float totalRotationSoFar {
+        get {
+            return ((currentTotalDistance / fullRotationDistance)+numCompletedRotations)*360f;
+        }
+    }
 
     private const float rampUpDuration = 0.2f;
     private const float windDownSpinCount = 5;
@@ -61,13 +68,11 @@ public class WheelController : MonoBehaviour {
     [SerializeField] private AnimationCurve speedCurve;
 
     private ActivityProfile[] allActivities;
+    private HashSet<ActivityProfile> alreadyPlayedActivities = new HashSet<ActivityProfile>();
 
 
     private void Start () {
         allActivities = Resources.LoadAll<ActivityProfile>("Activities");
-        foreach (ActivityProfile activity in allActivities) {
-            Debug.Log(activity.name);
-        }
 
         RectTransform segmentPrefabRect = segmentPrefab.GetComponent<RectTransform>();
         segmentHeight = segmentPrefabRect.rect.height;
@@ -109,18 +114,33 @@ public class WheelController : MonoBehaviour {
             lastTimeSpinStarted = Time.time;
         }
 
-        currentTotalDistance %= fullRotationDistance;
+        while (currentTotalDistance > fullRotationDistance) {
+            currentTotalDistance -= fullRotationDistance;
+            numCompletedRotations += 1;
+        }
+
         currentSpinID = Random.Range(100000000, 999999999);
         inFinalApproach = false;
         springDrag = Random.Range(springDragMin, springDragMax);
         finalApproachSpeed = Random.Range(finalApproachSpeedMin, finalApproachSpeedMax);
 
-        CreateSegments("YOU WIN");
+        CreateSegments(1);
     }
 
 
 
-    private void CreateSegments (string selectedSegmentLabel) {
+    private void CreateSegments (int numPlayers) {
+
+        List<ActivityProfile> activityPool = GetRemainingActivitiesForPlayerCount(numPlayers);
+        ActivityProfile selectedActivity = SelectActivityFromPool(activityPool);
+        HashSet<ActivityProfile> activitiesOnWheel = new HashSet<ActivityProfile>();
+
+        activityPool.Remove(selectedActivity);
+        activitiesOnWheel.Add(selectedActivity);
+
+        Debug.Log($"selected {selectedActivity.name}");
+
+
         WheelSegment[] childSegments = GetComponentsInChildren<WheelSegment>();
         bool oddToggle = false;
         if (childSegments.Length > 0) {
@@ -141,11 +161,28 @@ public class WheelController : MonoBehaviour {
             if (i == numTotalSegments/2) {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
 
-                label = selectedSegmentLabel;
+                label = selectedActivity.name.ToUpper();
                 // we want to end on this segment. our goal distance should reflect that
                 currentGoalDistance = currentTotalDistance + newSegment.transform.position.y - selectedSegmentY;
                 // add a random number of extra rotations
                 currentGoalDistance += fullRotationDistance * Random.Range(numTotalSpinsMin, numTotalSpinsMax);
+            }
+            else {
+                if (activityPool.Count == 0) {
+                    // no activities left to populate the pool. just add a bunch of random ones from the big list
+                    activityPool.AddRange(allActivities);
+                }
+
+                ActivityProfile activity = activityPool[Random.Range(0, activityPool.Count)];
+                while (activitiesOnWheel.Contains(activity)) {
+                    // iterate until we get an activity that isn't already on the wheel
+                    activity = activityPool[Random.Range(0, activityPool.Count)];
+                }
+
+                label = activity.name.ToUpper();
+
+                activityPool.Remove(activity);
+                activitiesOnWheel.Add(activity);
             }
 
             newSegment.Initialize(label, oddToggle, currentSpinID);
@@ -232,6 +269,22 @@ public class WheelController : MonoBehaviour {
             }
         }
     }
+
+    private List<ActivityProfile> GetRemainingActivitiesForPlayerCount (int playerCount) {
+        List<ActivityProfile> validActivities = new List<ActivityProfile>();
+        foreach (ActivityProfile activity in allActivities) {
+            if (activity.CanPlayWithNumPlayers(playerCount) && !alreadyPlayedActivities.Contains(activity)) {
+                validActivities.Add(activity);
+            }
+        }
+        return validActivities;
+    }
+
+    private ActivityProfile SelectActivityFromPool (List<ActivityProfile> activityPool) {
+        ActivityProfile activity = activityPool[Random.Range(0, activityPool.Count)];
+        return activity;
+    }
+
 
     private IEnumerator TriggerLateStart () {
         yield return null;

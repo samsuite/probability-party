@@ -121,6 +121,18 @@ float4 SatShift(float4 rgb, float shift) {
 }
 
 
+// shift the hue of a color while maintaining its perceptual luminosity
+float4 HueShiftMaintainLuminosity (float4 rgb, float shift) {
+	float4 shifted = HueShift(rgb, shift);
+
+	float originalLuminosity = GetLuminosity(rgb);
+	float newLuminosity = GetLuminosity(shifted);
+
+	float4 valueShifted = ValShift(shifted, originalLuminosity-newLuminosity);
+	return valueShifted;
+}
+
+
 // shift the hue and saturation of a given color
 float4 HueSatShift(float4 rgb, float HueShift, float SatShift) {
     // convert to hsv

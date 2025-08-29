@@ -132,6 +132,18 @@ public class ActivityProfileEditor : Editor {
             }
         }
 
+        if (hasMinPlayerCountProperty.boolValue) {
+            if (minPlayerCountProperty.intValue <= 0) {
+                issueDetected = true;
+            }
+        }
+
+        if (hasMaxPlayerCountProperty.boolValue) {
+            if (maxPlayerCountProperty.intValue <= 0) {
+                issueDetected = true;
+            }
+        }
+
         GUILayout.Space(8);
         GUIStyle italicsLabel = new GUIStyle(GUI.skin.label);
         italicsLabel.fontStyle = FontStyle.Italic;

@@ -389,6 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3633ed343595bc34ea5ea0e248086437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTotalDistance: 0
+  numCompletedRotations: 0
   segmentPrefab: {fileID: 3234263512133539200, guid: a72bb55a6ac98bd49bae1f504c67472d, type: 3}
   speedCurve:
     serializedVersion: 2
@@ -748,6 +750,9 @@ MonoBehaviour:
   wobbleSpeedMax: 15
   maxWobbleValue: 0.075
   perlinSpeed: 20
+  hueShiftSpeedMin: 0
+  hueShiftSpeedMax: 15
+  maxBandFrequencyValue: 2
   blurIntensityCurve:
     serializedVersion: 2
     m_Curve:
@@ -797,6 +802,30 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   wobbleIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hueShiftCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
