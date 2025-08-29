@@ -11,16 +11,16 @@ public class WheelController : MonoBehaviour {
     private float canvasTopY;
     private float canvasBottomY;
     private float selectedSegmentY;
-    private float fullRotationDistance {
+    public float fullRotationDistance {
         get {
             return canvasTopY - canvasBottomY;
         }
     }
 
-    public float currentTotalDistance;
+    private float currentTotalDistance;
     private float currentGoalDistance;
     private int currentSpinID;
-    public int numCompletedRotations;
+    private int numCompletedRotations;
 
     public float totalRotationSoFar {
         get {
@@ -58,6 +58,7 @@ public class WheelController : MonoBehaviour {
         }
     }
     public float currentSpeed { get; private set; }
+    public float distanceThisFrame { get; private set; }
     private bool inFinalApproach = true;
     private float springDrag;
     private float finalApproachSpeed;
@@ -191,7 +192,7 @@ public class WheelController : MonoBehaviour {
     }
 
     private void MoveSegments () {
-        float distanceThisFrame = currentSpeed * Time.deltaTime;
+        distanceThisFrame = currentSpeed * Time.deltaTime;
 
         currentTotalDistance += distanceThisFrame;
         transform.position += Vector3.down * distanceThisFrame;

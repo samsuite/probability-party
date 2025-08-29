@@ -22,21 +22,23 @@ public class WheelEffects : MonoBehaviour {
     [Space]
     public float hueShiftSpeedMin;
     public float hueShiftSpeedMax;
+    [Space]
+    public float bandFreqSpeedMin;
+    public float bandFreqSpeedMax;
     public float maxBandFrequencyValue;
     [Space]
-    public AnimationCurve blurIntensityCurve;
-    public AnimationCurve spiralIntensityCurve;
-    public AnimationCurve wobbleIntensityCurve;
-    public AnimationCurve hueShiftCurve;
+    public AnimationCurve intensityCurve;
 
     private Material material;
     private int angleDifferenceID;
     private int speedBlurID;
-    private int currentAngleID;
+    private int hueshiftAngleID;
     private int bandFrequencyID;
 
     private Vector3 originalPosition;
     private float wobbleIntensity;
+
+    private float accumulatedHueshiftAngle;
 
     private void Start () {
         material = new Material(renderer.material);
@@ -44,7 +46,7 @@ public class WheelEffects : MonoBehaviour {
 
         angleDifferenceID = Shader.PropertyToID("_CenterAngleDifference");
         speedBlurID = Shader.PropertyToID("_SpeedBlur");
-        currentAngleID = Shader.PropertyToID("_CurrentAngle");
+        hueshiftAngleID = Shader.PropertyToID("_HueshiftAngle");
         bandFrequencyID = Shader.PropertyToID("_HueShiftBandFrequency");
 
         originalPosition = transform.position;
@@ -56,18 +58,22 @@ public class WheelEffects : MonoBehaviour {
         float blurVal = Mathf.InverseLerp(blurSpeedMin, blurSpeedMax, speed);
         float spiralVal = Mathf.InverseLerp(spiralSpeedMin, spiralSpeedMax, speed);
         float wobbleVal = Mathf.InverseLerp(wobbleSpeedMin, wobbleSpeedMax, speed);
-        float bandFrequencyVal = Mathf.InverseLerp(hueShiftSpeedMin, hueShiftSpeedMax, speed);
+        float bandFreqVal = Mathf.InverseLerp(bandFreqSpeedMin, bandFreqSpeedMax, speed);
+        float hueshiftVal = Mathf.InverseLerp(hueShiftSpeedMin, hueShiftSpeedMax, speed);
 
-        blurVal = blurIntensityCurve.Evaluate(blurVal);
-        spiralVal = spiralIntensityCurve.Evaluate(spiralVal);
-        wobbleVal = wobbleIntensityCurve.Evaluate(spiralVal);
-        bandFrequencyVal = hueShiftCurve.Evaluate(bandFrequencyVal);
+        blurVal = intensityCurve.Evaluate(blurVal);
+        spiralVal = intensityCurve.Evaluate(spiralVal);
+        wobbleVal = intensityCurve.Evaluate(spiralVal);
+        bandFreqVal = intensityCurve.Evaluate(bandFreqVal);
+        hueshiftVal = intensityCurve.Evaluate(hueshiftVal);
 
         SetSpeedBlur(blurVal * maxBlurValue);
         SetSpiralOffset(spiralVal * maxSpiralValue);
         SetWobbleIntensity(wobbleVal * maxWobbleValue);
-        SetBandFrequency(bandFrequencyVal * maxBandFrequencyValue);
-        SetCurrentAngle(rotator.totalRotationSoFar);
+        SetBandFrequency(bandFreqVal * maxBandFrequencyValue);
+
+        accumulatedHueshiftAngle += hueshiftVal * (rotator.distanceThisFrame / rotator.fullRotationDistance) * 360f;
+        SetHueShiftAngle(accumulatedHueshiftAngle);
 
         ApplyWobble();
     }
@@ -81,8 +87,8 @@ public class WheelEffects : MonoBehaviour {
         material.SetFloat(angleDifferenceID, value);
     }
 
-    private void SetCurrentAngle (float value) {
-        material.SetFloat(currentAngleID, value);
+    private void SetHueShiftAngle (float value) {
+        material.SetFloat(hueshiftAngleID, value);
     }
 
     private void SetBandFrequency (float value) {
