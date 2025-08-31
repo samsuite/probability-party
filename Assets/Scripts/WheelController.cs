@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(0)]
 public class WheelController : MonoBehaviour {
 
     private const int numTotalSegments = 16;
@@ -57,6 +58,31 @@ public class WheelController : MonoBehaviour {
             return fullRotationDistance * finalApproachSpinCount;
         }
     }
+
+    public float distanceFromTarget {
+        get {
+            return Mathf.Abs(currentGoalDistance - currentTotalDistance);
+        }
+    }
+
+    private bool hasSettled;
+    public bool isSettled {
+        get {
+            if (hasSettled) {
+                return true;
+            }
+
+            const float settledSpeedThreshold = 0.15f;
+            const float settledDistanceThreshold = 0.01f;
+            bool settled = inFinalApproach && currentSpeed < settledSpeedThreshold && Time.time > lastTimeSpinStarted + rampUpDuration && distanceFromTarget < settledDistanceThreshold;
+
+            if (settled) {
+                hasSettled = true;
+            }
+            return settled;
+        }
+    }
+
     public float currentSpeed { get; private set; }
     public float distanceThisFrame { get; private set; }
     private bool inFinalApproach = true;
@@ -64,9 +90,12 @@ public class WheelController : MonoBehaviour {
     private float finalApproachSpeed;
     private float lastTimeSpinStarted;
     private float timeStartedFinalApproach;
+    public int selectedSegmentID { get; private set; } = -1;
 
     [SerializeField] private WheelSegment segmentPrefab;
     [SerializeField] private AnimationCurve speedCurve;
+
+
 
     private ActivityProfile[] allActivities;
     private HashSet<ActivityProfile> alreadyPlayedActivities = new HashSet<ActivityProfile>();
@@ -87,30 +116,18 @@ public class WheelController : MonoBehaviour {
 
         // ReSharper disable once PossibleLossOfFraction
         selectedSegmentY = canvasTopY - ((numTotalSegments / 2)-1) * segmentHeightWorldSpace;
-
-        StartCoroutine(TriggerLateStart());
-
-    }
-
-    private void LateStart () {
-        StartSpin();
     }
 
     private void Update () {
-
         MoveSegments();
         LoopSegments();
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            StartSpin();
-        }
     }
 
     private void FixedUpdate () {
         CalculateCurrentSpeed();
     }
 
-    private void StartSpin () {
+    public void StartSpin () {
         if (inFinalApproach) {
             lastTimeSpinStarted = Time.time;
         }
@@ -122,6 +139,7 @@ public class WheelController : MonoBehaviour {
 
         currentSpinID = Random.Range(100000000, 999999999);
         inFinalApproach = false;
+        hasSettled = false;
         springDrag = Random.Range(springDragMin, springDragMax);
         finalApproachSpeed = Random.Range(finalApproachSpeedMin, finalApproachSpeedMax);
 
@@ -130,7 +148,7 @@ public class WheelController : MonoBehaviour {
 
 
 
-    private void CreateSegments (int numPlayers) {
+    public void CreateSegments (int numPlayers) {
 
         List<ActivityProfile> activityPool = GetRemainingActivitiesForPlayerCount(numPlayers);
         ActivityProfile selectedActivity = SelectActivityFromPool(activityPool);
@@ -149,17 +167,20 @@ public class WheelController : MonoBehaviour {
             oddToggle = !childSegments[^1].isOdd;
         }
 
+        WheelSegment selectedSegment = null;
+
         for (int i = 0; i < numTotalSegments; i++) {
             WheelSegment newSegment = Instantiate(segmentPrefab, transform);
+            Debug.Log("instantiate");
             newSegment.gameObject.name = segmentPrefab.gameObject.name;
 
             int digits = Random.Range(1, 10);
             string label = string.Empty;
             for (int d = 0; d < digits; d++) {
-                label += Random.Range(0,9).ToString();
+                label += Random.Range(0, 9).ToString();
             }
 
-            if (i == numTotalSegments/2) {
+            if (i == numTotalSegments / 2) {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
 
                 label = selectedActivity.name.ToUpper();
@@ -167,6 +188,9 @@ public class WheelController : MonoBehaviour {
                 currentGoalDistance = currentTotalDistance + newSegment.transform.position.y - selectedSegmentY;
                 // add a random number of extra rotations
                 currentGoalDistance += fullRotationDistance * Random.Range(numTotalSpinsMin, numTotalSpinsMax);
+
+                // set this as the selected segment
+                selectedSegment = newSegment;
             }
             else {
                 if (activityPool.Count == 0) {
@@ -186,9 +210,11 @@ public class WheelController : MonoBehaviour {
                 activitiesOnWheel.Add(activity);
             }
 
-            newSegment.Initialize(label, oddToggle, currentSpinID);
+            newSegment.Initialize(this, label, oddToggle, currentSpinID);
             oddToggle = !oddToggle;
         }
+
+        selectedSegmentID = selectedSegment.segmentID;
     }
 
     private void MoveSegments () {
@@ -284,12 +310,6 @@ public class WheelController : MonoBehaviour {
     private ActivityProfile SelectActivityFromPool (List<ActivityProfile> activityPool) {
         ActivityProfile activity = activityPool[Random.Range(0, activityPool.Count)];
         return activity;
-    }
-
-
-    private IEnumerator TriggerLateStart () {
-        yield return null;
-        LateStart();
     }
 
 }
