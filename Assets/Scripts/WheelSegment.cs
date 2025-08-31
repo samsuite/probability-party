@@ -9,18 +9,23 @@ public class WheelSegment : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI label;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Image borderImage;
+    [SerializeField] private Image hilightImage;
     [SerializeField] private Image fadeImage;
     [Space]
     [SerializeField] private Color bgColorOdd;
     [SerializeField] private Color fadeColorOdd;
     [SerializeField] private Color textColorOdd;
+    [Space]
     [SerializeField] private Color bgColorEven;
     [SerializeField] private Color fadeColorEven;
     [SerializeField] private Color textColorEven;
     [Space]
     [SerializeField] private Color bgColorSelected;
     [SerializeField] private Color fadeColorSelected;
-    [SerializeField] private Color textColorSelected;
+    [SerializeField] private Color textColorSelectedOdd;
+    [SerializeField] private Color textColorSelectedEven;
+    [SerializeField] private Color hilightColorSelectedOdd;
+    [SerializeField] private Color hilightColorSelectedEven;
 
     [HideInInspector] public bool hasBeenDuplicated = false;
     [HideInInspector] public int spinID;
@@ -28,10 +33,6 @@ public class WheelSegment : MonoBehaviour {
     [HideInInspector] public bool isOdd;
 
     [HideInInspector] public WheelController wheelController;
-
-    private void Start () {
-        Debug.Log("Start");
-    }
 
     public void Initialize (WheelController wheelController, string labelText, bool isOdd, int spinID) {
         label.text = labelText;
@@ -48,14 +49,16 @@ public class WheelSegment : MonoBehaviour {
 
     private void UpdateGraphics () {
         if (wheelController.selectedSegmentID == segmentID && wheelController.isSettled) {
-            label.color = textColorSelected;
+            label.color = isOdd ? textColorSelectedOdd : textColorSelectedEven;;
             borderImage.color = fadeColorSelected;
             backgroundImage.color = bgColorSelected;
+            hilightImage.color = isOdd ? hilightColorSelectedOdd : hilightColorSelectedEven;
         }
         else {
             label.color = isOdd ? textColorOdd : textColorEven;
             borderImage.color = isOdd ? fadeColorOdd : fadeColorEven;
             backgroundImage.color = isOdd ? bgColorOdd : bgColorEven;
+            hilightImage.color = Color.clear;
         }
 
         fadeImage.color = isOdd ? fadeColorOdd : fadeColorEven;

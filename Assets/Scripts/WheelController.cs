@@ -73,8 +73,12 @@ public class WheelController : MonoBehaviour {
             }
 
             const float settledSpeedThreshold = 0.15f;
-            const float settledDistanceThreshold = 0.01f;
-            bool settled = inFinalApproach && currentSpeed < settledSpeedThreshold && Time.time > lastTimeSpinStarted + rampUpDuration && distanceFromTarget < settledDistanceThreshold;
+            const float settledDistanceThreshold = 0.025f;
+            const float settledDurationThreshold = 2.5f;
+            bool settled = inFinalApproach &&
+                           currentSpeed < settledSpeedThreshold &&
+                           Time.time > lastTimeSpinStarted + rampUpDuration &&
+                           ((distanceFromTarget < settledDistanceThreshold)||(Time.time > timeStartedFinalApproach + settledDurationThreshold));
 
             if (settled) {
                 hasSettled = true;
@@ -90,7 +94,8 @@ public class WheelController : MonoBehaviour {
     private float finalApproachSpeed;
     private float lastTimeSpinStarted;
     private float timeStartedFinalApproach;
-    public int selectedSegmentID { get; private set; } = -1;
+    public int selectedSegmentID = -1;
+    public string selectedSegmentName { get; private set; } = string.Empty;
 
     [SerializeField] private WheelSegment segmentPrefab;
     [SerializeField] private AnimationCurve speedCurve;
@@ -171,7 +176,6 @@ public class WheelController : MonoBehaviour {
 
         for (int i = 0; i < numTotalSegments; i++) {
             WheelSegment newSegment = Instantiate(segmentPrefab, transform);
-            Debug.Log("instantiate");
             newSegment.gameObject.name = segmentPrefab.gameObject.name;
 
             int digits = Random.Range(1, 10);
@@ -215,6 +219,7 @@ public class WheelController : MonoBehaviour {
         }
 
         selectedSegmentID = selectedSegment.segmentID;
+        selectedSegmentName = selectedActivity.name.ToUpper();
     }
 
     private void MoveSegments () {

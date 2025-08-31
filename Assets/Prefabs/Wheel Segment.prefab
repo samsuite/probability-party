@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 5570690727902496111}
   - component: {fileID: 7115002553779874403}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Staple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,6 +352,81 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5937657257763793417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7005962054689508997}
+  - component: {fileID: 9186822498120490023}
+  - component: {fileID: 8064075861906093915}
+  m_Layer: 5
+  m_Name: Hilight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7005962054689508997
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937657257763793417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6521236809063127872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0.0000019073486}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9186822498120490023
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937657257763793417}
+  m_CullTransparentMesh: 1
+--- !u!114 &8064075861906093915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937657257763793417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c9c233e4bcf757c45802d8b14b644eb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -543,12 +618,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3523870248667666651}
+  - {fileID: 7005962054689508997}
   - {fileID: 8701842197088020207}
   - {fileID: 3360055963953571696}
   - {fileID: 416068517870798677}
+  - {fileID: 3495502962467186965}
   - {fileID: 7681784051892180986}
   - {fileID: 7390380691963975540}
-  - {fileID: 3495502962467186965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -579,6 +655,7 @@ MonoBehaviour:
   label: {fileID: 5944898745241854915}
   backgroundImage: {fileID: 4216352945400076449}
   borderImage: {fileID: 2006997339043701854}
+  hilightImage: {fileID: 8064075861906093915}
   fadeImage: {fileID: 7237229553149728595}
   bgColorOdd: {r: 0.93333334, g: 0.78500897, b: 0.28, a: 1}
   fadeColorOdd: {r: 0.7924528, g: 0.51117426, b: 0.26539695, a: 1}
@@ -586,9 +663,12 @@ MonoBehaviour:
   bgColorEven: {r: 0.94509804, g: 0.43325284, b: 0.28352943, a: 1}
   fadeColorEven: {r: 0.6039216, g: 0.18117648, b: 0.28400636, a: 1}
   textColorEven: {r: 0.34901962, g: 0.12156862, b: 0.17717934, a: 1}
-  bgColorSelected: {r: 1, g: 0.7930664, b: 0.5896226, a: 1}
-  fadeColorSelected: {r: 0.9339623, g: 0.54733187, b: 0.47138664, a: 1}
-  textColorSelected: {r: 0.5849056, g: 0.19638807, b: 0.046902817, a: 1}
+  bgColorSelected: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  fadeColorSelected: {r: 0, g: 0, b: 0, a: 1}
+  textColorSelectedOdd: {r: 1, g: 1, b: 1, a: 1}
+  textColorSelectedEven: {r: 1, g: 1, b: 1, a: 1}
+  hilightColorSelectedOdd: {r: 0.93333334, g: 0.78431374, b: 0.2784314, a: 1}
+  hilightColorSelectedEven: {r: 0.94509804, g: 0.43137255, b: 0.28235295, a: 1}
   hasBeenDuplicated: 0
   spinID: 0
   segmentID: 0
