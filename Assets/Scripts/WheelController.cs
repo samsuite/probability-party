@@ -76,6 +76,7 @@ public class WheelController : MonoBehaviour {
             const float settledDistanceThreshold = 0.025f;
             const float settledDurationThreshold = 2.5f;
             bool settled = inFinalApproach &&
+                           gameLogic.gameState == GameLogic.GameState.Spinning &&
                            currentSpeed < settledSpeedThreshold &&
                            Time.time > lastTimeSpinStarted + rampUpDuration &&
                            ((distanceFromTarget < settledDistanceThreshold)||(Time.time > timeStartedFinalApproach + settledDurationThreshold));
@@ -99,12 +100,11 @@ public class WheelController : MonoBehaviour {
 
     [SerializeField] private WheelSegment segmentPrefab;
     [SerializeField] private AnimationCurve speedCurve;
-
-
+    [SerializeField] private GameLogic gameLogic;
 
     private ActivityProfile[] allActivities;
     private HashSet<ActivityProfile> alreadyPlayedActivities = new HashSet<ActivityProfile>();
-
+    public ActivityProfile selectedActivity { get; private set; }
 
     private void Start () {
         allActivities = Resources.LoadAll<ActivityProfile>("Activities");
@@ -132,7 +132,7 @@ public class WheelController : MonoBehaviour {
         CalculateCurrentSpeed();
     }
 
-    public void StartSpin () {
+    public void StartSpin (int numPlayers) {
         if (inFinalApproach) {
             lastTimeSpinStarted = Time.time;
         }
@@ -148,22 +148,18 @@ public class WheelController : MonoBehaviour {
         springDrag = Random.Range(springDragMin, springDragMax);
         finalApproachSpeed = Random.Range(finalApproachSpeedMin, finalApproachSpeedMax);
 
-        CreateSegments(1);
+        CreateSegments(numPlayers, true);
     }
 
 
 
-    public void CreateSegments (int numPlayers) {
-
+    public void CreateSegments (int numPlayers, bool setGoal) {
         List<ActivityProfile> activityPool = GetRemainingActivitiesForPlayerCount(numPlayers);
-        ActivityProfile selectedActivity = SelectActivityFromPool(activityPool);
+        selectedActivity = SelectActivityFromPool(activityPool);
         HashSet<ActivityProfile> activitiesOnWheel = new HashSet<ActivityProfile>();
 
         activityPool.Remove(selectedActivity);
         activitiesOnWheel.Add(selectedActivity);
-
-        Debug.Log($"selected {selectedActivity.name}");
-
 
         WheelSegment[] childSegments = GetComponentsInChildren<WheelSegment>();
         bool oddToggle = false;
@@ -177,15 +173,10 @@ public class WheelController : MonoBehaviour {
         for (int i = 0; i < numTotalSegments; i++) {
             WheelSegment newSegment = Instantiate(segmentPrefab, transform);
             newSegment.gameObject.name = segmentPrefab.gameObject.name;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
 
-            int digits = Random.Range(1, 10);
-            string label = string.Empty;
-            for (int d = 0; d < digits; d++) {
-                label += Random.Range(0, 9).ToString();
-            }
-
-            if (i == numTotalSegments / 2) {
-                LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
+            string label;
+            if (i == numTotalSegments / 2 && setGoal) {
 
                 label = selectedActivity.name.ToUpper();
                 // we want to end on this segment. our goal distance should reflect that
@@ -218,8 +209,11 @@ public class WheelController : MonoBehaviour {
             oddToggle = !oddToggle;
         }
 
-        selectedSegmentID = selectedSegment.segmentID;
-        selectedSegmentName = selectedActivity.name.ToUpper();
+        if (selectedSegment != null) {
+            selectedSegmentID = selectedSegment.segmentID;
+            selectedSegmentName = selectedActivity.name.ToUpper();
+            Debug.Log($"selected {selectedActivity.name}");
+        }
     }
 
     private void MoveSegments () {

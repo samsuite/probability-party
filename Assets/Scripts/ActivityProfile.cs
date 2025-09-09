@@ -5,9 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Activity", menuName = "Activity Profile", order = -1000)]
 public class ActivityProfile : ScriptableObject {
 
-    [TextArea(3, 10)]
-    public string description;
-
+    public ActivityTag tags;
     public int exactPlayerCount = 1;
     public int minPlayerCount = 2;
     public int maxPlayerCount = 5;

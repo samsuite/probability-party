@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
-  m_Name: Teach Timber
+  m_Name: Job Job
   m_EditorClassIdentifier: 
-  description: 
+  tags: 1042
   exactPlayerCount: 5
   minPlayerCount: 2
   maxPlayerCount: 5

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: This Is Fun
   m_EditorClassIdentifier: 
-  description: 
+  tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 2
   maxPlayerCount: 5

@@ -12,7 +12,7 @@ public class ActivityProfileEditor : Editor {
 
     public override void OnInspectorGUI () {
 
-        SerializedProperty descriptionProperty = serializedObject.FindProperty(nameof(ActivityProfile.description));
+        SerializedProperty tagsProperty = serializedObject.FindProperty(nameof(ActivityProfile.tags));
         SerializedProperty exactPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.exactPlayerCount));
         SerializedProperty minPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.minPlayerCount));
         SerializedProperty maxPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.maxPlayerCount));
@@ -24,9 +24,7 @@ public class ActivityProfileEditor : Editor {
 
 
         EditorGUI.BeginChangeCheck();
-        GUILayout.Label("Description:");
-        GUILayout.Space(-16);
-        EditorGUILayout.PropertyField(descriptionProperty, new GUIContent(""));
+        EditorGUILayout.PropertyField(tagsProperty, new GUIContent("Tags:"));
 
         GUILayout.Space(16);
         EditorGUILayout.BeginHorizontal();
