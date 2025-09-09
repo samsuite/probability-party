@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Fifty Push-Ups
   m_EditorClassIdentifier: 
   tags: 160
-  exactPlayerCount: 5
+  exactPlayerCount: 1
   minPlayerCount: 2
   maxPlayerCount: 5
-  requireExactPlayerCount: 0
+  requireExactPlayerCount: 1
   hasMinPlayerCount: 0
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0

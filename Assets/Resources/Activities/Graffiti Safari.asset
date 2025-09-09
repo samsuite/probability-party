@@ -19,5 +19,5 @@ MonoBehaviour:
   requireExactPlayerCount: 0
   hasMinPlayerCount: 0
   hasMaxPlayerCount: 0
-  requireEvenPlayerCount: 0
+  requireEvenPlayerCount: 1
   requireOddPlayerCount: 0

@@ -27,6 +27,7 @@ public class GameLogic : MonoBehaviour {
     [SerializeField] private ActivityTagElement activityTagPrefab;
     [SerializeField] private Button acceptButton;
     [SerializeField] private Button declineButton;
+    [SerializeField] private TextMeshProUGUI resultsPlayerCountText;
     [Space]
     [SerializeField] private RectTransform readyPanel;
     [SerializeField] private Button readyButton;
@@ -75,7 +76,8 @@ public class GameLogic : MonoBehaviour {
         acceptButton.onClick.AddListener(AcceptButtonPressed);
         declineButton.onClick.AddListener(DeclineButtonPressed);
 
-        wheelController.CreateSegments(3, false);
+        playerCount = wheelController.GetRandomWeightedPlayerCount();
+        wheelController.CreateSegments(playerCount, false);
         StartCoroutine(ReadyToSpinCoroutine());
 
         SetResultsPosition(0);
@@ -156,10 +158,16 @@ public class GameLogic : MonoBehaviour {
         if (playerCount == 1) {
             playerCountText.text = "one person";
             readyButtonText.text = "I'm ready!";
+            if (gameState == GameState.ReadyToSpin) {
+                resultsPlayerCountText.text = "an activity for one person";
+            }
         }
         else {
             playerCountText.text = numString.ToLower() + " people";
             readyButtonText.text = numString + " people are ready!";
+            if (gameState == GameState.ReadyToSpin) {
+                resultsPlayerCountText.text = $"an activity for {numString.ToLower()} people";
+            }
         }
 
         plusButton.interactable = playerCount < maxPlayerCount;
@@ -238,6 +246,8 @@ public class GameLogic : MonoBehaviour {
 
     private void AcceptButtonPressed () {
         acceptedResult = true;
+        wheelController.ConsumeActivity(wheelController.selectedActivity);
+        playerCount = wheelController.GetRandomWeightedPlayerCount();
     }
 
     private void DeclineButtonPressed () {

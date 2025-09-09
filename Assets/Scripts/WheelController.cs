@@ -151,11 +151,11 @@ public class WheelController : MonoBehaviour {
         CreateSegments(numPlayers, true);
     }
 
-
-
+    
     public void CreateSegments (int numPlayers, bool setGoal) {
-        List<ActivityProfile> activityPool = GetRemainingActivitiesForPlayerCount(numPlayers);
-        selectedActivity = SelectActivityFromPool(activityPool);
+        List<ActivityProfile> activityPool = GetAllActivitiesForPlayerCount(numPlayers);
+
+        selectedActivity = SelectActivityForPlayerCount(numPlayers);
         HashSet<ActivityProfile> activitiesOnWheel = new HashSet<ActivityProfile>();
 
         activityPool.Remove(selectedActivity);
@@ -306,9 +306,61 @@ public class WheelController : MonoBehaviour {
         return validActivities;
     }
 
-    private ActivityProfile SelectActivityFromPool (List<ActivityProfile> activityPool) {
-        ActivityProfile activity = activityPool[Random.Range(0, activityPool.Count)];
+    private List<ActivityProfile> GetAllActivitiesForPlayerCount (int playerCount) {
+        List<ActivityProfile> validActivities = new List<ActivityProfile>();
+        foreach (ActivityProfile activity in allActivities) {
+            if (activity.CanPlayWithNumPlayers(playerCount)) {
+                validActivities.Add(activity);
+            }
+        }
+        return validActivities;
+    }
+
+    private ActivityProfile SelectActivityForPlayerCount (int playerCount) {
+        List<ActivityProfile> remainingActivities = GetRemainingActivitiesForPlayerCount(playerCount);
+        List<ActivityProfile> allActivities = GetAllActivitiesForPlayerCount(playerCount);
+
+        // pick an activity from the unplayed pool if there are any left.
+        // if not, pick one from the total pool
+        ActivityProfile activity;
+        if (remainingActivities.Count == 0) {
+            activity = allActivities[Random.Range(0, allActivities.Count)];
+        }
+        else {
+            activity = remainingActivities[Random.Range(0, remainingActivities.Count)];
+        }
+
         return activity;
+    }
+
+    public void ConsumeActivity (ActivityProfile activity) {
+        alreadyPlayedActivities.Add(activity);
+    }
+
+    public int GetRandomWeightedPlayerCount (int iterations = 1) {
+        int[] weights = new int[10];
+        int totalPossibleActivities = 0;
+
+        for (int i = 0; i < weights.Length; i++) {
+            weights[i] = GetRemainingActivitiesForPlayerCount(i + 1).Count;
+            totalPossibleActivities += weights[i];
+            Debug.Log($"{weights[i]} activities for {i+1} players");
+        }
+
+        int rand = Random.Range(0, totalPossibleActivities);
+        int index = 0;
+        while (rand > weights[index]) {
+            rand -= weights[index];
+            index += 1;
+        }
+
+        if (index+1 > 6 && iterations > 0) {
+            // more than 6 people is a lot.
+            // you should have to roll this twice in a row for it to count
+            return GetRandomWeightedPlayerCount(iterations - 1);
+        }
+
+        return index+1;
     }
 
 }

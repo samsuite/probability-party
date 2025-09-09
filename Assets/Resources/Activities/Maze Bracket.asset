@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Maze Bracket
   m_EditorClassIdentifier: 
   tags: 1024
-  exactPlayerCount: 5
+  exactPlayerCount: 4
   minPlayerCount: 2
   maxPlayerCount: 5
-  requireExactPlayerCount: 0
+  requireExactPlayerCount: 1
   hasMinPlayerCount: 0
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0

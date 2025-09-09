@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: 1057
   exactPlayerCount: 5
-  minPlayerCount: 2
+  minPlayerCount: 4
   maxPlayerCount: 5
   requireExactPlayerCount: 0
-  hasMinPlayerCount: 0
+  hasMinPlayerCount: 1
   hasMaxPlayerCount: 0
-  requireEvenPlayerCount: 0
+  requireEvenPlayerCount: 1
   requireOddPlayerCount: 0

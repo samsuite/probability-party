@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Dustbiters
   m_EditorClassIdentifier: 
   tags: 1028
-  exactPlayerCount: 5
+  exactPlayerCount: 2
   minPlayerCount: 2
   maxPlayerCount: 5
-  requireExactPlayerCount: 0
+  requireExactPlayerCount: 1
   hasMinPlayerCount: 0
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0

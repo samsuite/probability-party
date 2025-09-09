@@ -15,9 +15,9 @@ MonoBehaviour:
   tags: 64
   exactPlayerCount: 5
   minPlayerCount: 2
-  maxPlayerCount: 5
+  maxPlayerCount: 4
   requireExactPlayerCount: 0
   hasMinPlayerCount: 0
-  hasMaxPlayerCount: 0
+  hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
