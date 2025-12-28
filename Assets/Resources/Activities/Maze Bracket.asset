@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Maze Bracket
   m_EditorClassIdentifier: 
+  description: Race to solve paper mazes. Write all participants names on the bracket
+    sheet. Each match is 1v1, and the winners of the first two rounds are the finalists
+    for the third round (single elimination). For the round marked A on the bracket,
+    both players get a copy of the maze marked A, and so on. After a countdown, both
+    players try to solve their mazes as fast as possible. The winner of the tournament
+    gets two card punches, and the losing finalist gets one card punch.
+  qrLink: 
   tags: 1024
   exactPlayerCount: 4
   minPlayerCount: 2
@@ -21,3 +28,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

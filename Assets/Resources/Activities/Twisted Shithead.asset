@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Twisted Shithead
   m_EditorClassIdentifier: 
+  description: "Play two rounds of Twisted Shithead, a grotesquely overcomplicated
+    version of the card game Palace. All players get a card punch for taking the
+    time to figure it out.\r\n\r\nRules are here:\r"
+  qrLink: https://www.jaymes.net/cards.html
   tags: 4
   exactPlayerCount: 3
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

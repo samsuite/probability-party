@@ -12,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Graffiti Safari
   m_EditorClassIdentifier: 
+  description: Divide into teams of two people. Each team go find a cool piece of
+    graffiti and meet back here in 20 minutes. Coolest graffiti wins (get someone
+    else at the party to judge). Both players on the winning team get a card punch.
+  qrLink: 
   tags: 1536
   exactPlayerCount: 5
-  minPlayerCount: 2
+  minPlayerCount: 4
   maxPlayerCount: 5
   requireExactPlayerCount: 0
-  hasMinPlayerCount: 0
+  hasMinPlayerCount: 1
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 1
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Fortune's Favor
   m_EditorClassIdentifier: 
+  description: Each player choose a lucky number between 1 and 99 and write it down.
+    Then, everyone open fortune cookies as fast as possible. First person to find
+    their lucky number in a fortune cookie wins a card punch.
+  qrLink: 
   tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

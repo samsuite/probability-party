@@ -12,6 +12,8 @@ public class ActivityProfileEditor : Editor {
 
     public override void OnInspectorGUI () {
 
+        SerializedProperty descriptionProperty = serializedObject.FindProperty(nameof(ActivityProfile.description));
+        SerializedProperty qrLinkProperty = serializedObject.FindProperty(nameof(ActivityProfile.qrLink));
         SerializedProperty tagsProperty = serializedObject.FindProperty(nameof(ActivityProfile.tags));
         SerializedProperty exactPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.exactPlayerCount));
         SerializedProperty minPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.minPlayerCount));
@@ -21,10 +23,28 @@ public class ActivityProfileEditor : Editor {
         SerializedProperty hasMaxPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.hasMaxPlayerCount));
         SerializedProperty requireEvenPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.requireEvenPlayerCount));
         SerializedProperty requireOddPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.requireOddPlayerCount));
+        SerializedProperty weightProperty = serializedObject.FindProperty(nameof(ActivityProfile.weight));
+        SerializedProperty unavailableBeforeTimeProperty = serializedObject.FindProperty(nameof(ActivityProfile.unavailableBeforeTime));
+        SerializedProperty hoursProperty = serializedObject.FindProperty(nameof(ActivityProfile.hours));
+        SerializedProperty minutesProperty = serializedObject.FindProperty(nameof(ActivityProfile.minutes));
 
 
         EditorGUI.BeginChangeCheck();
+        EditorGUILayout.PropertyField(descriptionProperty, new GUIContent("Description:"));
+        EditorGUILayout.PropertyField(qrLinkProperty, new GUIContent("QR Link:"));
+        GUILayout.Space(16);
+
         EditorGUILayout.PropertyField(tagsProperty, new GUIContent("Tags:"));
+        EditorGUILayout.PropertyField(weightProperty, new GUIContent("Weight:"));
+        GUILayout.Space(16);
+
+        EditorGUILayout.PropertyField(unavailableBeforeTimeProperty, new GUIContent("Unavailable before a certain time?"));
+        if (unavailableBeforeTimeProperty.boolValue) {
+            EditorGUI.indentLevel += 1;
+            EditorGUILayout.PropertyField(hoursProperty, new GUIContent("Hours (0-23):"));
+            EditorGUILayout.PropertyField(minutesProperty, new GUIContent("Minutes (0-59):"));
+            EditorGUI.indentLevel -= 1;
+        }
 
         GUILayout.Space(16);
         EditorGUILayout.BeginHorizontal();
@@ -83,6 +103,7 @@ public class ActivityProfileEditor : Editor {
             serializedObject.ApplyModifiedProperties();
         }
 
+        /*
         string playerCountSummary = string.Empty;
         if (requireExactPlayerCountProperty.boolValue) {
             if (exactPlayerCountProperty.intValue == 1) {
@@ -122,6 +143,7 @@ public class ActivityProfileEditor : Editor {
         if (playerCountSummary == string.Empty) {
             playerCountSummary += "Any number of players";
         }
+        */
 
         bool issueDetected = false;
         if (hasMinPlayerCountProperty.boolValue && hasMaxPlayerCountProperty.boolValue) {
@@ -154,6 +176,9 @@ public class ActivityProfileEditor : Editor {
         else {
             GUI.enabled = false;
         }
+
+        string playerCountSummary = GameLogic.GetPlayerCountSummary(activity);
+
         GUILayout.Label(playerCountSummary, italicsLabel);
         GUILayout.EndHorizontal();
 

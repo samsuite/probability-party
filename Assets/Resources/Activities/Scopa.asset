@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Scopa
   m_EditorClassIdentifier: 
+  description: Play two games of Scopa, an Italian card game. The winner of each
+    game gets one card punch. The rules are in the PDF linked here -- or if Simon
+    is available, get him to teach you.
+  qrLink: https://www.thespiel.net/files/scopa-rules.pdf
   tags: 1028
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

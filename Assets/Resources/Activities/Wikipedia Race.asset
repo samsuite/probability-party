@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Wikipedia Race
   m_EditorClassIdentifier: 
+  description: Both players attempt to get from one Wikipedia page to another in
+    the fewest possible steps. You'll probably want to use my computer for this (ask
+    me to set it up). One player should go into another room while the other plays,
+    to avoid cheating. The winning player gets one card punch (in the event of a
+    tie, both players get a card punch).
+  qrLink: 
   tags: 1026
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +27,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

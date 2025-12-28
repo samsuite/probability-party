@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Beer Pong
   m_EditorClassIdentifier: 
+  description: "Split into two teams and play a game of Beer Pong. This is a drinking
+    game, but feel free to get something non-alcoholic (I'd recommend playing with
+    water in the actual cups, and taking a sip from your own drink instead). Every
+    player on the winning team gets one card punch.\r\n\r\nRules are here:\r"
+  qrLink: https://fgbradleys.com/wp-content/uploads/rules/Beer%20Pong.pdf
   tags: 1057
   exactPlayerCount: 5
   minPlayerCount: 4
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 1
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

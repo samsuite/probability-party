@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: GeoGuessr
   m_EditorClassIdentifier: 
+  description: Play a collaborative game of GeoGuessr (get Sam to set this up). You
+    have three tries to get 15,000 out of a possible 20,000 points in one game. Moving
+    & panning are allowed. If you succeed, each player gets one card punch.
+  qrLink: 
   tags: 2050
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

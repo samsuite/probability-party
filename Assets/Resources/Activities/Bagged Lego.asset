@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Bagged Lego
   m_EditorClassIdentifier: 
+  description: "Build this lego set without opening the bag.\r\nThis is really hard,
+    so feel free to quit if it sucks. Take two card punches if you succeed.\r\n\r\nSince
+    the instructions are also in the bag, use this PDF:\r"
+  qrLink: https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6491702.pdf
   tags: 160
   exactPlayerCount: 1
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Ceiling Juggling
   m_EditorClassIdentifier: 
+  description: Find the taped rectangle on the ceiling of the living room, and throw
+    this sticky ball up so it sticks there. Players take turns waiting for the ball
+    to fall, then catching it and throwing it back up. If you fail to catch the ball,
+    or miss the rectangle on the ceiling, you're eliminated. Last player standing
+    wins one card punch.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +27,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

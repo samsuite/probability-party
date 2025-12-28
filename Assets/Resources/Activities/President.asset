@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: President
   m_EditorClassIdentifier: 
+  description: "Play three rounds of President, a classic trick-taking card game.
+    The winner (president) of each round gets a card punch. If one player wins multiple
+    times, they get multiple punches.\r\n\r\nRules are here:\r"
+  qrLink: https://bicyclecards.com/how-to-play/presidents
   tags: 1028
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

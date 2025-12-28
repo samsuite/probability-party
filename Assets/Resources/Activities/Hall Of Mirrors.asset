@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Hall Of Mirrors
   m_EditorClassIdentifier: 
+  description: Solve the puzzle of the Hall of Mirrors. Your prize awaits in this
+    locked box.
+  qrLink: 
   tags: 256
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +24,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 100
+  unavailableBeforeTime: 1
+  hours: 21
+  minutes: 30

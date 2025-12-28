@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Portal Pals
   m_EditorClassIdentifier: 
+  description: This is an activity for two people. Your goal is to cooperatively
+    complete the opening levels of the classic 2007 puzzle game Portal using only
+    one controller. Sit on the couch next to each other and hold the controller so
+    that you each have one hand on the controller. Each person is responsible for
+    the inputs on their side of the controller. If you can complete all levels up
+    to and including test chamber 03, both players get one card punch.
+  qrLink: 
   tags: 2082
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +28,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

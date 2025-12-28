@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: So Clover
   m_EditorClassIdentifier: 
+  description: Play a full game of So Clover, a collaborative word game. All players
+    get one card punch. The rules are in the box, or you can get Sam to explain how
+    it works.
+  qrLink: 
   tags: 2056
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

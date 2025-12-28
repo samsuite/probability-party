@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Price Match
   m_EditorClassIdentifier: 
+  description: Go to the corner store across the street and purchase items with a
+    total cost of exactly $10.00. All participating players collaborate to make a
+    single purchase. You have one chance at the register. If successful, all players
+    get one card punch. Remember to ask for the receipt! Venmo request Sam for this.
+  qrLink: 
   tags: 2560
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

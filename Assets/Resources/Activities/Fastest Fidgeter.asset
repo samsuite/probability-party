@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Fastest Fidgeter
   m_EditorClassIdentifier: 
+  description: Each player take one fidget spinner. Place your spinners on the table,
+    and on the count of three, spin it as fast as you can. The player whose spinner
+    keeps spinning the longest wins one card punch.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

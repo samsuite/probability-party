@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Ice Cream
   m_EditorClassIdentifier: 
+  description: Go get ice cream! Salt & Straw closes at 11PM and Kate's closes at
+    10PM. The corner store across the street also sells pints. Send me a venmo request
+    and I'll pay for it.
+  qrLink: 
   tags: 512
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

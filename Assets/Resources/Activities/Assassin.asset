@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Assassin
   m_EditorClassIdentifier: 
+  description: "Throughout the rest of the night, you are playing a game of Assassin.
+    Each player will be assigned another player to assassinate (get Sam to set this
+    up). All participants get a bandana which they will attach to the side of their
+    body (through a belt loop, ideally). The bandana must be easy to pull away if
+    tugged. To assassinate someone, take their bandana. After assassinating, you
+    inherit your victim's target. The final remaining player gets two card punches,
+    and the second-to-last player gets one card punch. If you have to leave before
+    this game is over, let Sam know and he'll tell your assassin to go after your
+    target instead.\r\n\r\nOnce everyone knows their targets and has put on their
+    bandanas, go back to the waiting room and continue other activities as normal.\r"
+  qrLink: 
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 5
@@ -21,3 +32,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 50
+  unavailableBeforeTime: 1
+  hours: 21
+  minutes: 0

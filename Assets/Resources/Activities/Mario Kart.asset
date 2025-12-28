@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Mario Kart
   m_EditorClassIdentifier: 
+  description: Play a full Grand Prix in Mario Kart. All players who get a trophy
+    (first, second, or third place overall, including NPCs) get one card punch.
+  qrLink: 
   tags: 1026
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +24,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

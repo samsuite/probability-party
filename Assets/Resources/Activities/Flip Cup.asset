@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Flip Cup
   m_EditorClassIdentifier: 
+  description: "Split into two teams and play Flip Cup. This is a drinking game,
+    but feel free to get something non-alcoholic. Every player on the winning team
+    gets one card punch. Best two out of three rounds wins.\r\n\r\nRules are here:\r"
+  qrLink: https://en.wikipedia.org/wiki/Flip_cup#Gameplay
   tags: 1057
   exactPlayerCount: 5
   minPlayerCount: 4
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 1
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

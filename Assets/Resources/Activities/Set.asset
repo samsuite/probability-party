@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Set
   m_EditorClassIdentifier: 
+  description: Play two rounds of the pattern-matching card game Set. The winner
+    of each round gets a card punch. In the case of a tie, all tied winners get a
+    card punch.
+  qrLink: 
   tags: 1028
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

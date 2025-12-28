@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Dustbiters
   m_EditorClassIdentifier: 
+  description: Dustbiters is a competitive card game. Play two full games. Round
+    one is just for practice -- learn the rules and don't stress out. The winner
+    of the second round gets one card punch. The rules are in the box, or you can
+    get Sam to explain how it works.
+  qrLink: 
   tags: 1028
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

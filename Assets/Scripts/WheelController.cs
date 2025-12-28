@@ -104,6 +104,7 @@ public class WheelController : MonoBehaviour {
 
     private ActivityProfile[] allActivities;
     private HashSet<ActivityProfile> alreadyPlayedActivities = new HashSet<ActivityProfile>();
+    private HashSet<ActivityProfile> declinedActivities = new HashSet<ActivityProfile>();
     public ActivityProfile selectedActivity { get; private set; }
 
     private void Start () {
@@ -151,7 +152,7 @@ public class WheelController : MonoBehaviour {
         CreateSegments(numPlayers, true);
     }
 
-    
+
     public void CreateSegments (int numPlayers, bool setGoal) {
         List<ActivityProfile> activityPool = GetAllActivitiesForPlayerCount(numPlayers);
 
@@ -299,8 +300,10 @@ public class WheelController : MonoBehaviour {
     private List<ActivityProfile> GetRemainingActivitiesForPlayerCount (int playerCount) {
         List<ActivityProfile> validActivities = new List<ActivityProfile>();
         foreach (ActivityProfile activity in allActivities) {
-            if (activity.CanPlayWithNumPlayers(playerCount) && !alreadyPlayedActivities.Contains(activity)) {
-                validActivities.Add(activity);
+            if (activity.CanPlayWithNumPlayers(playerCount) && activity.CanPlayYet() && !alreadyPlayedActivities.Contains(activity) && !declinedActivities.Contains(activity)) {
+                for (int i = 0; i < activity.weight; i++) {
+                    validActivities.Add(activity);
+                }
             }
         }
         return validActivities;
@@ -309,7 +312,7 @@ public class WheelController : MonoBehaviour {
     private List<ActivityProfile> GetAllActivitiesForPlayerCount (int playerCount) {
         List<ActivityProfile> validActivities = new List<ActivityProfile>();
         foreach (ActivityProfile activity in allActivities) {
-            if (activity.CanPlayWithNumPlayers(playerCount)) {
+            if (activity.CanPlayWithNumPlayers(playerCount) && activity.CanPlayYet()) {
                 validActivities.Add(activity);
             }
         }
@@ -337,11 +340,20 @@ public class WheelController : MonoBehaviour {
         alreadyPlayedActivities.Add(activity);
     }
 
+    public void DeclineActivity (ActivityProfile activity) {
+        declinedActivities.Add(activity);
+    }
+
+    public void ClearDeclinedActivities () {
+        declinedActivities.Clear();
+    }
+
+
     public int GetRandomWeightedPlayerCount (int iterations = 1) {
         int[] weights = new int[10];
         int totalPossibleActivities = 0;
 
-        for (int i = 0; i < weights.Length; i++) {
+       for (int i = 0; i < weights.Length; i++) {
             weights[i] = GetRemainingActivitiesForPlayerCount(i + 1).Count;
             totalPossibleActivities += weights[i];
             Debug.Log($"{weights[i]} activities for {i+1} players");

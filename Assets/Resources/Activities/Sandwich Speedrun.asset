@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Sandwich Speedrun
   m_EditorClassIdentifier: 
+  description: Players compete to make a peanut butter and jelly sandwich as fast
+    as possible. Take turns making your sandwiches. Take as much time as you like
+    to get your ingredients ready, but you may not begin sandwich construction until
+    the timer starts. A legal sandwich must have an even layer of peanut butter and
+    an even layer of jelly between two slices of bread. The fastest sandwich artist
+    gets two card punches.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +28,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

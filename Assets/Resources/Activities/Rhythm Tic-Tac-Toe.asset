@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Rhythm Tic-Tac-Toe
   m_EditorClassIdentifier: 
+  description: "Play tic-tac-toe with a metronome. Each player takes turns placing
+    a piece on the board on the beat. Play three games as warmups -- one at 100BPM,
+    then 132BPM, then 160BPM. Then play a best-two-out-of-three match at 200BPM.
+    The winner of this match gets one card punch.\r\n\r\nHere's a good online metronome:\r"
+  qrLink: https://www.metronomeonline.com/
   tags: 1064
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

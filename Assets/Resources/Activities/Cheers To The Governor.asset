@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Cheers To The Governor
+  m_EditorClassIdentifier: 
+  description: 'This is a drinking game, but feel free to get something non-alcoholic.
+    All players sit in a circle. Choose a player to go first -- that player says
+    "one," then the person to their left says "two," and so on until you reach 21.
+    The player who says 21 is now the Governor. Everyone says "Cheers to the Governor"
+    and takes a drink. The Governor adds a new rule for one of the numbers: for example,
+    instead of saying "five" clap twice, or instead of saying "seventeen" say "abracadabra."
+    If you fail to follow a rule, take a drink and start back at "one." Play until
+    you have a rule for every number. All players get a card punch.'
+  qrLink: 
+  tags: 2049
+  exactPlayerCount: 5
+  minPlayerCount: 4
+  maxPlayerCount: 6
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

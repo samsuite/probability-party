@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Fifty Push-Ups
   m_EditorClassIdentifier: 
+  description: Sorry. If you do fifty push-ups by the end of the night, you get two
+    card punches. You can take breaks and do other activities in the meantime.
+  qrLink: 
   tags: 160
   exactPlayerCount: 1
   minPlayerCount: 2
@@ -21,3 +24,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

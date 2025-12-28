@@ -158,21 +158,88 @@ public class GameLogic : MonoBehaviour {
         if (playerCount == 1) {
             playerCountText.text = "one person";
             readyButtonText.text = "I'm ready!";
-            if (gameState == GameState.ReadyToSpin) {
-                resultsPlayerCountText.text = "an activity for one person";
-            }
         }
         else {
             playerCountText.text = numString.ToLower() + " people";
             readyButtonText.text = numString + " people are ready!";
-            if (gameState == GameState.ReadyToSpin) {
-                resultsPlayerCountText.text = $"an activity for {numString.ToLower()} people";
-            }
+        }
+
+        if (gameState == GameState.DisplayingResults) {
+            resultsPlayerCountText.text = "an activity for "+GetPlayerCountSummary(wheelController.selectedActivity);
         }
 
         plusButton.interactable = playerCount < maxPlayerCount;
         minusButton.interactable = playerCount > minPlayerCount;
     }
+
+
+    public static string GetPlayerCountSummary (ActivityProfile activity) {
+        string playerCountSummary = string.Empty;
+        if (activity.requireExactPlayerCount) {
+            if (activity.exactPlayerCount == 1) {
+                playerCountSummary = "1 person";
+            }
+            else {
+                playerCountSummary = $"{activity.exactPlayerCount} people";
+            }
+        }
+        else if (activity.hasMinPlayerCount && !activity.hasMaxPlayerCount) {
+            playerCountSummary = $"{activity.minPlayerCount} or more people";
+        }
+        else if (activity.hasMaxPlayerCount && !activity.hasMinPlayerCount) {
+            playerCountSummary = $"1 to {activity.maxPlayerCount} people";
+        }
+        else if (activity.hasMaxPlayerCount && activity.hasMinPlayerCount) {
+            playerCountSummary = $"{activity.minPlayerCount} to {activity.maxPlayerCount} people";
+        }
+
+        if (playerCountSummary == string.Empty) {
+            if (activity.requireEvenPlayerCount) {
+                playerCountSummary += "any even number of people";
+            }
+            if (activity.requireOddPlayerCount) {
+                playerCountSummary += "any odd number of people";
+            }
+        }
+        else {
+            if (activity.requireEvenPlayerCount || activity.requireOddPlayerCount) {
+
+                List<int> validPlayerCounts = new List<int>();
+                for (int i = 1; i <= 10; i++) {
+                    if (activity.CanPlayWithNumPlayers(i)) {
+                        validPlayerCounts.Add(i);
+                    }
+                }
+
+                playerCountSummary = string.Empty;
+                for (int i = 0; i < validPlayerCounts.Count; i++) {
+
+                    if (i == validPlayerCounts.Count - 1) {
+                        // last entry
+                        playerCountSummary += $"or {validPlayerCounts[i]}";
+                    }
+                    else if (i == validPlayerCounts.Count - 2) {
+                        // second to last entry
+                        playerCountSummary += $"{validPlayerCounts[i]} ";
+                    }
+                    else {
+                        // some other entry
+                        playerCountSummary += $"{validPlayerCounts[i]}, ";
+                    }
+                }
+
+
+                playerCountSummary += " people";
+            }
+        }
+
+        if (playerCountSummary == string.Empty) {
+            playerCountSummary += "any number of people";
+        }
+
+        return playerCountSummary;
+    }
+
 
     private void ShowReadyPanel () {
         readyPanel.gameObject.SetActive(true);
@@ -196,26 +263,26 @@ public class GameLogic : MonoBehaviour {
         foreach (ActivityTag tag in Enum.GetValues(typeof(ActivityTag))) {
             bool hasTag = ((int)activity.tags & (int)tag) == (int)tag;
             if (hasTag) {
-                string tagName;
                 ActivityTagElement newTagElement = Instantiate(activityTagPrefab, tagsLayout);
-
-                if (tag == ActivityTag.What) {
-                    tagName = "???";
-                }
-                else {
-                    string[] words = Regex.Matches(tag.ToString(), "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)")
-                        .OfType<Match>()
-                        .Select(m => m.Value)
-                        .ToArray();
-                    tagName = string.Join(" ", words);
-                }
-
-                newTagElement.label.text = tagName;
+                newTagElement.label.text = GetTagName(tag);
                 LayoutRebuilder.ForceRebuildLayoutImmediate(newTagElement.transform as RectTransform);
             }
         }
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(tagsLayout);
+    }
+
+    public static string GetTagName (ActivityTag tag) {
+        if (tag == ActivityTag.What) {
+            return "???";
+        }
+        else {
+            string[] words = Regex.Matches(tag.ToString(), "(^[a-z]+|[A-Z]+(?![a-z])|[A-Z][a-z]+)")
+                .OfType<Match>()
+                .Select(m => m.Value)
+                .ToArray();
+            return string.Join(" ", words);
+        }
     }
 
     private void ClearTags () {
@@ -246,12 +313,15 @@ public class GameLogic : MonoBehaviour {
 
     private void AcceptButtonPressed () {
         acceptedResult = true;
+        PrintManager.PrintActivityReceipt(wheelController.selectedActivity);
         wheelController.ConsumeActivity(wheelController.selectedActivity);
+        wheelController.ClearDeclinedActivities();
         playerCount = wheelController.GetRandomWeightedPlayerCount();
     }
 
     private void DeclineButtonPressed () {
         declinedResult = true;
+        wheelController.DeclineActivity(wheelController.selectedActivity);
     }
 
 

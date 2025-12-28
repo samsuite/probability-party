@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Dolphin Training
   m_EditorClassIdentifier: 
+  description: Choose who wants to go first (this player is the dolphin). The dolphin
+    will go into another room while the remaining players think of a series of actions
+    the dolphin must perform (for example, take a book off the shelf and then hop
+    up and down on one leg). When you're ready, call the dolphin back into the room.
+    After this point, the non-dolphin players cannot speak. Instead, cheer when the
+    dolphin does something close to their task, and boo when they do something wrong.
+    Once they figure it out, rotate and play again until everyone has had a turn
+    as the dolphin. Everyone gets one card punch.
+  qrLink: 
   tags: 2048
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +30,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

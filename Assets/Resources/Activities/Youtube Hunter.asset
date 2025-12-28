@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Youtube Hunter
   m_EditorClassIdentifier: 
+  description: On the count of three, use your phones to find a youtube video that
+    is exactly 21 minutes and 35 seconds long. The first person to find a video of
+    the correct length gets one card punch.
+  qrLink: 
   tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

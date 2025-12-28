@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Exquisite Corpse
   m_EditorClassIdentifier: 
+  description: Each player take a sheet of printer paper. Fold your paper into crosswise
+    sections equal to the total number of players (for example, if you have three
+    players, fold the paper into thirds -- all folds should be parallel). Players
+    start by drawing the feet of some sort of person or creature, making sure the
+    lines of their drawing continue slightly onto the next panel. Pass your paper
+    to the left, and draw the legs or torso of this creature without looking at the
+    previous panel. Continue until all panels are done, then share all the finished
+    creatures with the group. All participants get one card punch.
+  qrLink: 
   tags: 2112
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +30,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

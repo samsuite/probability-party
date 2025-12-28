@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Grab The Penny
   m_EditorClassIdentifier: 
+  description: All players sit around the dining room table. Place a penny at the
+    center of the table. All players get a sticky grabby hand. After a countdown,
+    players begin whipping their sticky hands at the penny, attempting to pull it
+    towards them. Don't take turns; go as fast as you can. If you pull the penny
+    all the way to you, you win. Play this twice. The winner of each round gets one
+    card punch.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +28,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

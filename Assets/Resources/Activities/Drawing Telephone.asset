@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Drawing Telephone
   m_EditorClassIdentifier: 
+  description: Each person should grab a piece of printer paper and a marker. Everyone
+    stand in a line and tape your paper to the back of the person in front of them.
+    Your goal is to all draw the same thing -- one line at a time, the person in
+    the back will draw a simple object, animal, etc on the back of the person in
+    front of them. That person then tries to imitate the same line on the person
+    in front of them, and so on, until the drawing is finished and everyone has drawn
+    all lines. It may be convenient for the person in front to tape their paper to
+    a wall. If the first & last drawings are even remotely similar, everyone gets
+    one card punch. Get a non-participant to judge if you need to.
+  qrLink: 
   tags: 2048
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +31,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

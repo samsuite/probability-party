@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Just One
   m_EditorClassIdentifier: 
+  description: Play a full game of Just One, a collaborative word guessing game.
+    All players get one card punch. Get Sam to explain how it works. Also, the markers
+    that come with the game are terrible. I have better ones you can use.
+  qrLink: 
   tags: 2056
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

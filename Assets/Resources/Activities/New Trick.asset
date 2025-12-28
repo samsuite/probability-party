@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: New Trick
   m_EditorClassIdentifier: 
+  description: Teach Timber a new trick. Maybe "lie down" or "roll over" or something
+    like that. You have a lot of options (she doesn't know much). If you can get
+    her to do something new on command, all participating players get one card punch.
+  qrLink: 
   tags: 2176
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Mad Verse City
   m_EditorClassIdentifier: 
-  tags: 1042
+  description: Play a round of the Jackbox game Mad Verse City! When you're done,
+    everyone gets one card punch.
+  qrLink: 
+  tags: 18
   exactPlayerCount: 5
   minPlayerCount: 3
   maxPlayerCount: 8
@@ -21,3 +24,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Perfect Bounce
   m_EditorClassIdentifier: 
+  description: Sit across from each other at the dining room table. Take turns bouncing
+    this ping pong ball on the table. You must each bounce the ball on the table
+    such that it bounces exactly twice before reaching the edge.Then you must each
+    bounce it exactly three times, and so on. If either of you fails to bounce the
+    ball the correct number of times, start over at two bounces. If you can both
+    manage to bounce the ball four times, you each get a card punch. If you can both
+    bounce the ball five times, you each get a second card punch. No talking is allowed
+    once this game begins.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +30,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

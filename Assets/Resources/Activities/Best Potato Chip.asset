@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Best Potato Chip
   m_EditorClassIdentifier: 
+  description: Grab ten potato chips at random from a bag and put them on a plate.
+    Then, sit down and mentally choose the best potato chip. On the count of three,
+    both point at your chip. Remove your selected chips and try again, repeating
+    until you both choose the same chip. If you get the same chip within two tries,
+    you both get a card punch. No discussion of what it means for a potato chip to
+    be "the best" is allowed before starting.
+  qrLink: 
   tags: 2048
   exactPlayerCount: 2
   minPlayerCount: 2
@@ -21,3 +28,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

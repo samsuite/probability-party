@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Guess The Temperature
   m_EditorClassIdentifier: 
+  description: Split into two teams. One team selects an object or surface in the
+    apartment, then the other team guesses what temperature it is in Fahrenheit.
+    Switch team roles and repeat. Verify the temperatures using the laser thermometer
+    I have in the kitchen. Whichever team guessed closest to the actual temperature
+    of their object wins. All players on the winning team get one card punch.
+  qrLink: 
   tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +27,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 1
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

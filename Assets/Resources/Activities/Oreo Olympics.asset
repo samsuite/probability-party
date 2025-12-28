@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Oreo Olympics
   m_EditorClassIdentifier: 
+  description: Every player places an oreo on their forehead. After a countdown,
+    all participants race to maneuver the oreo into their mouth without touching
+    it with their hands. The two fastest players each get one card punch. If your
+    oreo falls off of your face, you are disqualified.
+  qrLink: 
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

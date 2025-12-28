@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Marble Betting
   m_EditorClassIdentifier: 
+  description: "Pick a random marble race video from this playlist. Before the race
+    starts, every participating player must choose a favorite marble. If your marble
+    places in the top three of this race, you get a card punch. Get Sam to put this
+    on the TV.\r\n\r\nHere's the playlist:\r"
+  qrLink: https://www.youtube.com/playlist?list=PLSmWeUDtr9fC2HFqUFyVLGaXHzFSWcIsK
   tags: 1026
   exactPlayerCount: 5
   minPlayerCount: 3
@@ -21,3 +26,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 0
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

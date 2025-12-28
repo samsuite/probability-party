@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Evil Jenga
   m_EditorClassIdentifier: 
+  description: Play a game of Evil Jenga. Evil Jenga is exactly like regular Jenga,
+    except you have to play with long grabber claws instead of your human fingers.
+    Everyone but the losing player gets one card punch.
+  qrLink: 
   tags: 1032
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -21,3 +25,7 @@ MonoBehaviour:
   hasMaxPlayerCount: 1
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
+  weight: 20
+  unavailableBeforeTime: 1
+  hours: 22
+  minutes: 15
