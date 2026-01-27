@@ -32,6 +32,7 @@ public class GameLogic : MonoBehaviour {
     [SerializeField] private RectTransform readyPanel;
     [SerializeField] private Button readyButton;
     [SerializeField] private Button changeCountButton;
+    [SerializeField] private Button reprintButton;
     [SerializeField] private Button plusButton;
     [SerializeField] private Button minusButton;
     [SerializeField] private TextMeshProUGUI playerCountText;
@@ -77,6 +78,8 @@ public class GameLogic : MonoBehaviour {
 
         acceptButton.onClick.AddListener(AcceptButtonPressed);
         declineButton.onClick.AddListener(DeclineButtonPressed);
+
+        reprintButton.onClick.AddListener(PrintManager.ReprintLastActivity);
 
         playerCount = wheelController.GetRandomWeightedPlayerCount();
         wheelController.CreateSegments(playerCount, false);

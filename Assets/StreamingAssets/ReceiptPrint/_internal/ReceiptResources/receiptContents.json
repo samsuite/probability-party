@@ -1,9 +1,9 @@
 {
-    "title": "Cheers To The Governor",
-    "playerNum": "for 4 to 6 people",
-    "tags": "Drinking Game, Collaborative",
-    "body": "This is a drinking game, but feel free to get something non-alcoholic.\n\nAll players sit in a circle. Choose a player to go first -- that player says \"one,\" then the person to their left says \"two,\" and so on until you reach 21.\n\nThe player who says 21 is now the Governor. Everyone says \"Cheers to the Governor\" and takes a drink. The Governor adds a new rule for one of the numbers: for example, instead of saying \"five,\" clap twice, or instead of saying \"seventeen,\" say \"abracadabra.\"\n\nIf you fail to follow a rule, take a drink and start back at \"one.\" Play until you have a rule for every number. All players get a card punch.",
+    "title": "Set",
+    "playerNum": "for 2 to 6 people",
+    "tags": "Card Game, Competitive",
+    "body": "Play two rounds of the pattern-matching card game Set. The winner of each round gets a card punch. In the case of a tie, all tied winners get a card punch.",
     "hasQR": false,
-    "hasImage": true,
+    "hasImage": false,
     "qrLink": ""
 }

@@ -29,6 +29,13 @@ public class PrintManager : MonoBehaviour {
         printProcess.Start();
     }
 
+    public static void ReprintLastActivity () {
+        Process printProcess = new Process();
+        printProcess.StartInfo.FileName = Application.streamingAssetsPath + "/ReceiptPrint/ReceiptPrint.exe";
+        printProcess.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+        printProcess.Start();
+    }
+
     private static void UpdateJSON (ActivityProfile activity) {
         string path = Application.streamingAssetsPath + "/ReceiptPrint/_internal/ReceiptResources/receiptContents.json";
         string playerNum = "for "+GameLogic.GetPlayerCountSummary(activity);
