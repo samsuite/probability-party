@@ -51,9 +51,9 @@ public class GameLogic : MonoBehaviour {
     public float resultsPanDistanceV = 1000f;
     public float resultsPanDistanceH = 1000f;
 
-    private int playerCount = 1;
-    private const int minPlayerCount = 1;
+    private const int minPlayerCount = 2;
     private const int maxPlayerCount = 10;
+    private int playerCount = minPlayerCount;
 
     private void Start () {
         Initialize();
@@ -64,6 +64,8 @@ public class GameLogic : MonoBehaviour {
     }
 
     private void Initialize () {
+        Application.targetFrameRate = 60;
+
         originalCameraPosition = camera.transform.position;
         originalTopPanelPosition = resultsPanelTop.localPosition;
         originalBottomPanelPosition = resultsPanelBottom.localPosition;

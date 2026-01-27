@@ -15,10 +15,12 @@ public class PrintManager : MonoBehaviour {
         public string tags;
         public string body;
         public bool hasQR;
+        public bool hasImage;
         public string qrLink;
     }
 
     public static void PrintActivityReceipt (ActivityProfile activity) {
+        UpdateImage(activity);
         UpdateJSON(activity);
 
         Process printProcess = new Process();
@@ -37,12 +39,23 @@ public class PrintManager : MonoBehaviour {
             playerNum = playerNum,
             tags = tags,
             body = activity.description,
+            hasImage = activity.hasImage,
             hasQR = activity.hasQR,
             qrLink = activity.qrLink
         };
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(path, json);
+    }
+
+    private static void UpdateImage (ActivityProfile activity) {
+        if (!activity.hasImage) {
+            return;
+        }
+
+        string path = Application.streamingAssetsPath + "/ReceiptPrint/_internal/ReceiptResources/image.png";
+        byte[] bytes = activity.image.EncodeToPNG();
+        File.WriteAllBytes(path, bytes);
     }
 
     private static string GetTagsString (ActivityProfile activity) {

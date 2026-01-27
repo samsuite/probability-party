@@ -16,6 +16,7 @@ currentTime = datetime.now()
 formattedTime = currentTime.strftime("%m-%d-%Y %I:%M%p")
 
 jsonPath = "ReceiptResources/receiptContents.json"
+imagePath = "ReceiptResources/image.png"
 contents = open(jsonPath,'r')
 jsonData = json.loads(contents.read())
 contents.close()
@@ -25,6 +26,7 @@ body = jsonData["body"]
 playerNum = jsonData["playerNum"]
 tags = jsonData["tags"]
 hasQR = jsonData["hasQR"]
+hasImage = jsonData["hasImage"]
 
 printer = Usb(0x0416,0x5011,profile="NT-5890K")
 
@@ -49,9 +51,16 @@ if (hasQR):
     qrLink = jsonData["qrLink"]
     printer.text("\n")
     printer.qr(qrLink, ec=0, size=6, model=2, native=False, center=True, impl=None, image_arguments=None)
+else:
+    printer.text("\n\n")
 
-printer.text("\n\n"+formattedTime)
+if (hasImage):
+    printer.image(imagePath)
+
 printer.set(align="right")
+printer.text(formattedTime)
+
+
 printer.set(double_width=True)
 printer.text("\n----------------")
 printer.set(align="center",double_width=True)

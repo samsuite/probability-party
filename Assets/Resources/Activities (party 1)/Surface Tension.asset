@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Surface Tension
+  m_EditorClassIdentifier: 
+  description: Get a timer ready for 15 seconds. Take turns pouring water from a
+    measuring cup into a glass. You each have 15 seconds to take your turn. If the
+    cup overflows on your turn, you're eliminated. Empty the glass and play again
+    until one person remains. That person gets a card punch. Also, put a paper towel
+    or something under the glass before you do this.
+  qrLink: 
+  tags: 1056
+  exactPlayerCount: 5
+  minPlayerCount: 2
+  maxPlayerCount: 4
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

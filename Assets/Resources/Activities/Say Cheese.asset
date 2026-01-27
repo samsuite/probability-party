@@ -21,6 +21,7 @@ MonoBehaviour:
     creepy, you are disqualified. If no one receives a photo within ten minutes,
     you all lose.
   qrLink: 
+  image: {fileID: 0}
   tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 2

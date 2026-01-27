@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Vile Jenga
+  m_EditorClassIdentifier: 
+  description: "Play a game of Vile Jenga. Vile Jenga is exactly like regular Jenga,
+    with two significant differences:\r\n\r\n1) You have to play with long\n   grabber
+    claws instead of\n   your human fingers.\n\r\n2) Before your turn, spin in\n  
+    place five times.\r\n\r\nEveryone but the losing player gets one card punch.\r\n"
+  qrLink: 
+  tags: 1032
+  exactPlayerCount: 5
+  minPlayerCount: 2
+  maxPlayerCount: 4
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 20
+  unavailableBeforeTime: 1
+  hours: 22
+  minutes: 15

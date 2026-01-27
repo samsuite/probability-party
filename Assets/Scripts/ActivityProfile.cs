@@ -9,7 +9,10 @@ public class ActivityProfile : ScriptableObject {
     [TextArea(10,20)]
     public string description;
     public string qrLink;
+    public Texture2D image;
+
     public bool hasQR { get { return !string.IsNullOrWhiteSpace(qrLink); } }
+    public bool hasImage { get { return image != null; } }
 
     public ActivityTag tags;
     public int exactPlayerCount = 1;

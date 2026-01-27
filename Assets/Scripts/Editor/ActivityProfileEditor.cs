@@ -14,6 +14,7 @@ public class ActivityProfileEditor : Editor {
 
         SerializedProperty descriptionProperty = serializedObject.FindProperty(nameof(ActivityProfile.description));
         SerializedProperty qrLinkProperty = serializedObject.FindProperty(nameof(ActivityProfile.qrLink));
+        SerializedProperty imageProperty = serializedObject.FindProperty(nameof(ActivityProfile.image));
         SerializedProperty tagsProperty = serializedObject.FindProperty(nameof(ActivityProfile.tags));
         SerializedProperty exactPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.exactPlayerCount));
         SerializedProperty minPlayerCountProperty = serializedObject.FindProperty(nameof(ActivityProfile.minPlayerCount));
@@ -32,6 +33,7 @@ public class ActivityProfileEditor : Editor {
         EditorGUI.BeginChangeCheck();
         EditorGUILayout.PropertyField(descriptionProperty, new GUIContent("Description:"));
         EditorGUILayout.PropertyField(qrLinkProperty, new GUIContent("QR Link:"));
+        EditorGUILayout.PropertyField(imageProperty, new GUIContent("Image:"));
         GUILayout.Space(16);
 
         EditorGUILayout.PropertyField(tagsProperty, new GUIContent("Tags:"));
@@ -103,48 +105,6 @@ public class ActivityProfileEditor : Editor {
             serializedObject.ApplyModifiedProperties();
         }
 
-        /*
-        string playerCountSummary = string.Empty;
-        if (requireExactPlayerCountProperty.boolValue) {
-            if (exactPlayerCountProperty.intValue == 1) {
-                playerCountSummary = "Exactly 1 player";
-            }
-            else {
-                playerCountSummary = $"Exactly {exactPlayerCountProperty.intValue} players";
-            }
-        }
-        else if (hasMinPlayerCountProperty.boolValue && !hasMaxPlayerCountProperty.boolValue) {
-            playerCountSummary = $"{minPlayerCountProperty.intValue} or more players";
-        }
-        else if (hasMaxPlayerCountProperty.boolValue && !hasMinPlayerCountProperty.boolValue) {
-            playerCountSummary = $"1 to {maxPlayerCountProperty.intValue} players";
-        }
-        else if (hasMaxPlayerCountProperty.boolValue && hasMinPlayerCountProperty.boolValue) {
-            playerCountSummary = $"{minPlayerCountProperty.intValue} to {maxPlayerCountProperty.intValue} players";
-        }
-
-        if (playerCountSummary == string.Empty) {
-            if (requireEvenPlayerCountProperty.boolValue) {
-                playerCountSummary += "Any even number of players";
-            }
-            if (requireOddPlayerCountProperty.boolValue) {
-                playerCountSummary += "Any odd number of players";
-            }
-        }
-        else {
-            if (requireEvenPlayerCountProperty.boolValue) {
-                playerCountSummary += " (must be even)";
-            }
-            if (requireOddPlayerCountProperty.boolValue) {
-                playerCountSummary += " (must be odd)";
-            }
-        }
-
-        if (playerCountSummary == string.Empty) {
-            playerCountSummary += "Any number of players";
-        }
-        */
-
         bool issueDetected = false;
         if (hasMinPlayerCountProperty.boolValue && hasMaxPlayerCountProperty.boolValue) {
             if (minPlayerCountProperty.intValue >= maxPlayerCountProperty.intValue) {
@@ -177,13 +137,20 @@ public class ActivityProfileEditor : Editor {
             GUI.enabled = false;
         }
 
-        string playerCountSummary = GameLogic.GetPlayerCountSummary(activity);
+        string playerCountSummary = "an activity for "+GameLogic.GetPlayerCountSummary(activity);
 
         GUILayout.Label(playerCountSummary, italicsLabel);
         GUILayout.EndHorizontal();
 
         GUI.color = Color.white;
         GUI.enabled = true;
+
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("Test Print", GUILayout.Width(100))) {
+            PrintManager.PrintActivityReceipt(activity);
+        }
+        GUILayout.EndHorizontal();
     }
 
 }

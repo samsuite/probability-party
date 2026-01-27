@@ -13,14 +13,24 @@ MonoBehaviour:
   m_Name: Cheers To The Governor
   m_EditorClassIdentifier: 
   description: 'This is a drinking game, but feel free to get something non-alcoholic.
-    All players sit in a circle. Choose a player to go first -- that player says
-    "one," then the person to their left says "two," and so on until you reach 21.
-    The player who says 21 is now the Governor. Everyone says "Cheers to the Governor"
+
+
+    All
+    players sit in a circle. Choose a player to go first -- that player says "one,"
+    then the person to their left says "two," and so on until you reach 21.
+
+
+    The
+    player who says 21 is now the Governor. Everyone says "Cheers to the Governor"
     and takes a drink. The Governor adds a new rule for one of the numbers: for example,
-    instead of saying "five" clap twice, or instead of saying "seventeen" say "abracadabra."
-    If you fail to follow a rule, take a drink and start back at "one." Play until
-    you have a rule for every number. All players get a card punch.'
+    instead of saying "five," clap twice, or instead of saying "seventeen," say "abracadabra."
+
+
+    If
+    you fail to follow a rule, take a drink and start back at "one." Play until you
+    have a rule for every number. All players get a card punch.'
   qrLink: 
+  image: {fileID: 0}
   tags: 2049
   exactPlayerCount: 5
   minPlayerCount: 4
