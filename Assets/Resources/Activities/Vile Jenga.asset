@@ -15,8 +15,9 @@ MonoBehaviour:
   description: "Play a game of Vile Jenga. Vile Jenga is exactly like regular Jenga,
     with two significant differences:\r\n\r\n1) You have to play with long\n   grabber
     claws instead of\n   your human fingers.\n\r\n2) Before your turn, spin in\n  
-    place five times.\r\n\r\nEveryone but the losing player gets one card punch.\r\n"
+    place five times.\r\n\r\nEveryone but the losing player gets one mark.\r"
   qrLink: 
+  image: {fileID: 0}
   tags: 1032
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -27,6 +28,6 @@ MonoBehaviour:
   requireEvenPlayerCount: 0
   requireOddPlayerCount: 0
   weight: 20
-  unavailableBeforeTime: 1
-  hours: 22
+  unavailableBeforeTime: 0
+  hours: 10
   minutes: 15

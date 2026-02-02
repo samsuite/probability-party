@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Bake Off
+  m_EditorClassIdentifier: 
+  description: 'Split into two teams and compete to make the best batch of cookies.
+    You can make any kind of cookie you want (though it would be great if they were
+    vegan). Please avoid using walnuts and pine nuts, since a few people have allergies.
+
+
+    I
+    have lots of basic ingredients, but if you need something else, Trader Joe''s
+    closes at 9 and Fred Meyer closes at around 9:30. If you buy ingredients, let
+    me know and I''ll reimburse you!
+
+
+    You have 45 minutes to make your cookies,
+    starting now. I (Sam) will judge your cookies when they''re done! All participants
+    get one mark, and members of the winning team get two marks. Good luck!'
+  qrLink: 
+  image: {fileID: 0}
+  tags: 3136
+  exactPlayerCount: 1
+  minPlayerCount: 4
+  maxPlayerCount: 6
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 1
+  requireOddPlayerCount: 0
+  weight: 50
+  unavailableBeforeTime: 1
+  hours: 8
+  minutes: 25

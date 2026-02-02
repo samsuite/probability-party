@@ -13,6 +13,11 @@ public class ActivityProfile : ScriptableObject {
 
     public bool hasQR { get { return !string.IsNullOrWhiteSpace(qrLink); } }
     public bool hasImage { get { return image != null; } }
+    public DateTime readyTime {
+        get {
+            return new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, (hours+12)%24, minutes, 0);
+        }
+    }
 
     public ActivityTag tags;
     public int exactPlayerCount = 1;
@@ -59,7 +64,6 @@ public class ActivityProfile : ScriptableObject {
             return true;
         }
 
-        DateTime readyTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, hours, minutes, 0);
         return DateTime.Now.CompareTo(readyTime) > 0;
     }
 

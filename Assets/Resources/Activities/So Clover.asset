@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: So Clover
   m_EditorClassIdentifier: 
   description: Play a full game of So Clover, a collaborative word game. All players
-    get one card punch. The rules are in the box, or you can get Sam to explain how
-    it works.
+    get one mark. The rules are in the box, or you can get Sam to explain how it
+    works.
   qrLink: 
+  image: {fileID: 0}
   tags: 2056
   exactPlayerCount: 5
   minPlayerCount: 3

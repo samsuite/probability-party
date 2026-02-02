@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Every player places an oreo on their forehead. After a countdown,
     all participants race to maneuver the oreo into their mouth without touching
-    it with their hands. The two fastest players each get one card punch. If your
-    oreo falls off of your face, you are disqualified.
+    it with their hands. The two fastest players each get one mark. If your oreo
+    falls off of your face, you are disqualified.
   qrLink: 
+  image: {fileID: 0}
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2

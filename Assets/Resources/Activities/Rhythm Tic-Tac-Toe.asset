@@ -15,8 +15,9 @@ MonoBehaviour:
   description: "Play tic-tac-toe with a metronome. Each player takes turns placing
     a piece on the board on the beat. Play three games as warmups -- one at 100BPM,
     then 132BPM, then 160BPM. Then play a best-two-out-of-three match at 200BPM.
-    The winner of this match gets one card punch.\r\n\r\nHere's a good online metronome:\r"
+    The winner of this match gets one mark.\r\n\r\nHere's a good online metronome:\r"
   qrLink: https://www.metronomeonline.com/
+  image: {fileID: 0}
   tags: 1064
   exactPlayerCount: 2
   minPlayerCount: 2

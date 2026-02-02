@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Pass The Pigs
+  m_EditorClassIdentifier: 
+  description: 'Play Pass the Pigs, a peculiar Yahtzee-like game that uses pigs for
+    dice. The winner gets one mark. Here are the rules:'
+  qrLink: https://winning-moves.com/images/PTP_Rule_2023.pdf
+  image: {fileID: 0}
+  tags: 1152
+  exactPlayerCount: 1
+  minPlayerCount: 2
+  maxPlayerCount: 5
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

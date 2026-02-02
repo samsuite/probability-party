@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Go get ice cream! Salt & Straw closes at 11PM and Kate's closes at
     10PM. The corner store across the street also sells pints. Send me a venmo request
-    and I'll pay for it.
+    and I'll pay for it. Everyone gets one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 512
   exactPlayerCount: 5
   minPlayerCount: 3

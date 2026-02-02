@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Mad Verse City
   m_EditorClassIdentifier: 
   description: Play a round of the Jackbox game Mad Verse City! When you're done,
-    everyone gets one card punch.
+    everyone gets one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 18
   exactPlayerCount: 5
   minPlayerCount: 3

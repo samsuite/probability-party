@@ -15,7 +15,7 @@ MonoBehaviour:
   description: "Split into two teams and play a game of Beer Pong. This is a drinking
     game, but feel free to get something non-alcoholic (I'd recommend playing with
     water in the actual cups, and taking a sip from your own drink instead). Every
-    player on the winning team gets one card punch.\r\n\r\nRules are here:\r"
+    player on the winning team gets one mark.\r\n\r\nRules are here:\r"
   qrLink: https://fgbradleys.com/wp-content/uploads/rules/Beer%20Pong.pdf
   image: {fileID: 0}
   tags: 1057

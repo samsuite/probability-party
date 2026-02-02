@@ -17,8 +17,9 @@ MonoBehaviour:
     a random word. Count down again, and say the word that you think is "between"
     your word and your partner's word. Repeat this until you say the same word. Keep
     track of how many tries this takes -- both players on the team that succeeds
-    with the fewest tries gets a card punch.
+    with the fewest tries gets a mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 2048
   exactPlayerCount: 2
   minPlayerCount: 4

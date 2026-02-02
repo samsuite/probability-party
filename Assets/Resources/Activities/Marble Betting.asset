@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: "Pick a random marble race video from this playlist. Before the race
     starts, every participating player must choose a favorite marble. If your marble
-    places in the top three of this race, you get a card punch. Get Sam to put this
-    on the TV.\r\n\r\nHere's the playlist:\r"
+    places in the top three of this race, you get a mark. Get Sam to put this on
+    the TV.\r\n\r\nHere's the playlist:\r"
   qrLink: https://www.youtube.com/playlist?list=PLSmWeUDtr9fC2HFqUFyVLGaXHzFSWcIsK
+  image: {fileID: 0}
   tags: 1026
   exactPlayerCount: 5
   minPlayerCount: 3

@@ -17,8 +17,9 @@ MonoBehaviour:
     players begin whipping their sticky hands at the penny, attempting to pull it
     towards them. Don't take turns; go as fast as you can. If you pull the penny
     all the way to you, you win. Play this twice. The winner of each round gets one
-    card punch.
+    mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 1056
   exactPlayerCount: 5
   minPlayerCount: 2

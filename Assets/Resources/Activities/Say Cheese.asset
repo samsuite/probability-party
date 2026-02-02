@@ -16,10 +16,10 @@ MonoBehaviour:
     you a photo of themselves smiling very wide and creepily like the joker. You
     have five minutes to choose a target and compose a single text asking for this
     photo. When you're all ready, everyone press send at the same time. Whoever gets
-    a photo back first gets a card punch. No followup texts are allowed, and you
-    cannot explain the circumstances of the game. If the photo you receive is not
-    creepy, you are disqualified. If no one receives a photo within ten minutes,
-    you all lose.
+    a photo back first gets a mark. No followup texts are allowed, and you cannot
+    explain the circumstances of the game. If the photo you receive is not creepy,
+    you are disqualified. If no one receives a photo within ten minutes, you all
+    lose.
   qrLink: 
   image: {fileID: 0}
   tags: 1024

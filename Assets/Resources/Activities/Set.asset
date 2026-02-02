@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Set
   m_EditorClassIdentifier: 
   description: Play two rounds of the pattern-matching card game Set. The winner
-    of each round gets a card punch. In the case of a tie, all tied winners get a
-    card punch.
+    of each round gets a mark. In the case of a tie, all tied winners get a mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 1028
   exactPlayerCount: 5
   minPlayerCount: 2

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: President
   m_EditorClassIdentifier: 
   description: "Play three rounds of President, a classic trick-taking card game.
-    The winner (president) of each round gets a card punch. If one player wins multiple
-    times, they get multiple punches.\r\n\r\nRules are here:\r"
+    The winner (president) of each round gets a mark. If one player wins multiple
+    times, they get multiple marks.\r\n\r\nRules are here:\r"
   qrLink: https://bicyclecards.com/how-to-play/presidents
+  image: {fileID: 0}
   tags: 1028
   exactPlayerCount: 5
   minPlayerCount: 3

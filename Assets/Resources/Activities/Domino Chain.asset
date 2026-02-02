@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
   m_Name: Domino Chain
   m_EditorClassIdentifier: 
-  description: Use an entire box of dominoes to build a chain through the apartment,
-    then knock it down. All participants get one card punch.
+  description: Use two entire boxes of dominoes to build a chain through the apartment,
+    then knock it down. All participants get one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 2112
   exactPlayerCount: 5
   minPlayerCount: 2

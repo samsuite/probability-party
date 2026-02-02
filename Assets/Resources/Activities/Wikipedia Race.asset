@@ -15,9 +15,10 @@ MonoBehaviour:
   description: Both players attempt to get from one Wikipedia page to another in
     the fewest possible steps. You'll probably want to use my computer for this (ask
     me to set it up). One player should go into another room while the other plays,
-    to avoid cheating. The winning player gets one card punch (in the event of a
-    tie, both players get a card punch).
+    to avoid cheating. The winning player gets one mark (in the event of a tie, both
+    players get a mark).
   qrLink: 
+  image: {fileID: 0}
   tags: 1026
   exactPlayerCount: 2
   minPlayerCount: 2

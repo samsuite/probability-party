@@ -16,6 +16,7 @@ MonoBehaviour:
     except you have to play with long grabber claws instead of your human fingers.
     Everyone but the losing player gets one card punch.
   qrLink: 
+  image: {fileID: 0}
   tags: 1032
   exactPlayerCount: 5
   minPlayerCount: 2
@@ -27,5 +28,5 @@ MonoBehaviour:
   requireOddPlayerCount: 0
   weight: 20
   unavailableBeforeTime: 1
-  hours: 22
+  hours: 10
   minutes: 15

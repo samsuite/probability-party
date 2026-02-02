@@ -17,8 +17,9 @@ MonoBehaviour:
     one controller. Sit on the couch next to each other and hold the controller so
     that you each have one hand on the controller. Each person is responsible for
     the inputs on their side of the controller. If you can complete all levels up
-    to and including test chamber 03, both players get one card punch.
+    to and including test chamber 03, both players get one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 2082
   exactPlayerCount: 2
   minPlayerCount: 2

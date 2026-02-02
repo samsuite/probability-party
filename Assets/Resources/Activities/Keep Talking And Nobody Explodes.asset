@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Keep Talking And Nobody Explodes
+  m_EditorClassIdentifier: 
+  description: 'Play Keep Talking and Nobody Explodes, a cooperative bomb defusal
+    video game (ask Sam to set this up). Decide which player will be the Defuser.
+    The other players are the Experts, and they must take the defusal guide into
+    the bedroom, where they will assist the Defuser via walkie-talkie.
+
+
+    Complete
+    Section 2 (the basics). This might take a few tries! Feel free to switch out
+    who''s playing as the Defuser. All participants get one mark.'
+  qrLink: 
+  image: {fileID: 0}
+  tags: 2178
+  exactPlayerCount: 1
+  minPlayerCount: 2
+  maxPlayerCount: 4
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 1
+  unavailableBeforeTime: 0
+  hours: 0
+  minutes: 0

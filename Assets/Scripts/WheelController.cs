@@ -372,7 +372,7 @@ public class WheelController : MonoBehaviour {
             return GetRandomWeightedPlayerCount(iterations - 1);
         }
 
-        return index+1;
+        return Mathf.Max(index+1,2);
     }
 
 }

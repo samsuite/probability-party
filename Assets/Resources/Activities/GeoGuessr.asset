@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Play a collaborative game of GeoGuessr (get Sam to set this up). You
     have three tries to get 15,000 out of a possible 20,000 points in one game. Moving
-    & panning are allowed. If you succeed, each player gets one card punch.
+    & panning are allowed. If you succeed, each player gets one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 2050
   exactPlayerCount: 5
   minPlayerCount: 2

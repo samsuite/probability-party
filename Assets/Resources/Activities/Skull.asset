@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Skull
   m_EditorClassIdentifier: 
   description: Play a game of Skull. Skull is a bluffing game about tricking people
-    into flipping over the wrong coasters. The winner gets one card punch. The rules
-    are in the box, or you can get Sam to explain how it works.
+    into flipping over the wrong coasters. The winner gets one mark. The rules are
+    in the box, or you can get Sam to explain how it works.
   qrLink: 
+  image: {fileID: 0}
   tags: 1032
   exactPlayerCount: 5
   minPlayerCount: 3

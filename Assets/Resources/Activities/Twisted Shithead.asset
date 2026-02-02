@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Twisted Shithead
   m_EditorClassIdentifier: 
   description: "Play two rounds of Twisted Shithead, a grotesquely overcomplicated
-    version of the card game Palace. All players get a card punch for taking the
-    time to figure it out.\r\n\r\nRules are here:\r"
+    version of the card game Palace. All players get a mark for taking the time to
+    figure it out.\r\n\r\nRules are here:\r"
   qrLink: https://www.jaymes.net/cards.html
+  image: {fileID: 0}
   tags: 4
   exactPlayerCount: 3
   minPlayerCount: 3

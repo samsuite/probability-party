@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Building Bridges
+  m_EditorClassIdentifier: 
+  description: 'Split into two teams. Each team must build a bridge out of popsicle
+    sticks and hot glue. Your bridge should be designed to span a three-foot gap
+    and should have a platform where Jenga blocks can be stacked. Once the bridges
+    are complete, we''ll set them up and stack Jenga blocks on them until they break.
+    The bridge that can hold the most blocks wins, and all members of that team get
+    2 marks.
+
+
+    You have 30 minutes to build your bridge. Good luck! Also, please
+    try not to get hot glue everywhere.'
+  qrLink: 
+  image: {fileID: 0}
+  tags: 3136
+  exactPlayerCount: 1
+  minPlayerCount: 4
+  maxPlayerCount: 6
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 1
+  hasMaxPlayerCount: 1
+  requireEvenPlayerCount: 1
+  requireOddPlayerCount: 0
+  weight: 10
+  unavailableBeforeTime: 1
+  hours: 9
+  minutes: 45

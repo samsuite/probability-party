@@ -17,8 +17,9 @@ MonoBehaviour:
     for the third round (single elimination). For the round marked A on the bracket,
     both players get a copy of the maze marked A, and so on. After a countdown, both
     players try to solve their mazes as fast as possible. The winner of the tournament
-    gets two card punches, and the losing finalist gets one card punch.
+    gets two card punches, and the losing finalist gets one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 1024
   exactPlayerCount: 4
   minPlayerCount: 2

@@ -25,8 +25,9 @@ MonoBehaviour:
 
 
     Once they figure it out, rotate and play again until everyone has
-    had a turn as the dolphin. Everyone gets one card punch.'
+    had a turn as the dolphin. Everyone gets one mark.'
   qrLink: 
+  image: {fileID: 0}
   tags: 2048
   exactPlayerCount: 5
   minPlayerCount: 3

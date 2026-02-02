@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: "Split into two teams and play Flip Cup. This is a drinking game,
     but feel free to get something non-alcoholic. Every player on the winning team
-    gets one card punch. Best two out of three rounds wins.\r\n\r\nRules are here:\r"
+    gets one mark. Best two out of three rounds wins.\r\n\r\nRules are here:\r"
   qrLink: https://en.wikipedia.org/wiki/Flip_cup#Gameplay
+  image: {fileID: 0}
   tags: 1057
   exactPlayerCount: 5
   minPlayerCount: 4

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Divide into teams of two people. Each team go find a cool piece of
     graffiti and meet back here in 20 minutes. Coolest graffiti wins (get someone
-    else at the party to judge). Both players on the winning team get a card punch.
+    else at the party to judge). Both players on the winning team get a mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 1536
   exactPlayerCount: 5
   minPlayerCount: 4

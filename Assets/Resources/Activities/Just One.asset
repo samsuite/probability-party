@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Just One
   m_EditorClassIdentifier: 
   description: Play a full game of Just One, a collaborative word guessing game.
-    All players get one card punch. Get Sam to explain how it works. Also, the markers
+    All players get one mark. Get Sam to explain how it works. Also, the markers
     that come with the game are terrible. I have better ones you can use.
   qrLink: 
+  image: {fileID: 0}
   tags: 2056
   exactPlayerCount: 5
   minPlayerCount: 3

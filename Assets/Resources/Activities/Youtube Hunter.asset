@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: On the count of three, use your phones to find a youtube video that
     is exactly 21 minutes and 35 seconds long. The first person to find a video of
-    the correct length gets one card punch.
+    the correct length gets one mark.
   qrLink: 
+  image: {fileID: 0}
   tags: 1024
   exactPlayerCount: 5
   minPlayerCount: 2

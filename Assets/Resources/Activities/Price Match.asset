@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Price Match
   m_EditorClassIdentifier: 
   description: Go to the corner store across the street and purchase items with a
-    total cost of exactly $10.00. All participating players collaborate to make a
+    total cost of exactly $11.45. All participating players collaborate to make a
     single purchase. You have one chance at the register. If successful, all players
-    get one card punch. Remember to ask for the receipt! Venmo request Sam for this.
+    get one mark. Remember to ask for the receipt! Venmo request Sam for this.
   qrLink: 
+  image: {fileID: 0}
   tags: 2560
   exactPlayerCount: 5
   minPlayerCount: 3

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1ce26f351eaaa4f9e8c51890ff0ea9, type: 3}
+  m_Name: Red vs Blue
+  m_EditorClassIdentifier: 
+  description: 'Read this out loud to everyone at the party:
+
+
+    Please pause all
+    activities for a moment.
+
+
+    For the next hour, the party will be split into
+    two teams: a red team and a blue team. All marks collected during this time will
+    not go towards individual player scores; instead, they will contribute to an
+    overall team score. At the end of this hour, every player on the winning team
+    may claim a prize from the prize pool.
+
+
+    The teams are as follows:
+
+
+    Red
+
+    -
+    Annalisa
+
+    - Celine
+
+    - Ethan
+
+    - Kendra
+
+    - Sam Suite
+
+    - Simon
+
+
+    Blue
+
+    -
+    Cameron
+
+    - Jake
+
+    - Nic
+
+    - Sam Strathman
+
+    - Spirit
+
+    - Story
+
+    -
+    Takoda
+
+
+    If your name isn''t on this list, you can choose whichever team
+    you like.
+
+
+    Sam will give out colored wristbands to denote teams. Once you
+    get your wristband, you can continue whatever you were just doing. Good luck!'
+  qrLink: 
+  image: {fileID: 0}
+  tags: 256
+  exactPlayerCount: 1
+  minPlayerCount: 2
+  maxPlayerCount: 5
+  requireExactPlayerCount: 0
+  hasMinPlayerCount: 0
+  hasMaxPlayerCount: 0
+  requireEvenPlayerCount: 0
+  requireOddPlayerCount: 0
+  weight: 999
+  unavailableBeforeTime: 1
+  hours: 9
+  minutes: 35

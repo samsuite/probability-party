@@ -11,6 +11,8 @@ public class ActivityProfileEditor : Editor {
     }
 
     public override void OnInspectorGUI () {
+        GUIStyle italicsLabel = new GUIStyle(GUI.skin.label);
+        italicsLabel.fontStyle = FontStyle.Italic;
 
         SerializedProperty descriptionProperty = serializedObject.FindProperty(nameof(ActivityProfile.description));
         SerializedProperty qrLinkProperty = serializedObject.FindProperty(nameof(ActivityProfile.qrLink));
@@ -43,8 +45,16 @@ public class ActivityProfileEditor : Editor {
         EditorGUILayout.PropertyField(unavailableBeforeTimeProperty, new GUIContent("Unavailable before a certain time?"));
         if (unavailableBeforeTimeProperty.boolValue) {
             EditorGUI.indentLevel += 1;
-            EditorGUILayout.PropertyField(hoursProperty, new GUIContent("Hours (0-23):"));
+            EditorGUILayout.PropertyField(hoursProperty, new GUIContent("Hours (0-11):"));
             EditorGUILayout.PropertyField(minutesProperty, new GUIContent("Minutes (0-59):"));
+            string formattedTime = activity.readyTime.ToString("h:mm tt");
+
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.Label(formattedTime, italicsLabel);
+            GUILayout.Space(16);
+            GUILayout.EndHorizontal();
+
             EditorGUI.indentLevel -= 1;
         }
 
@@ -125,8 +135,6 @@ public class ActivityProfileEditor : Editor {
         }
 
         GUILayout.Space(8);
-        GUIStyle italicsLabel = new GUIStyle(GUI.skin.label);
-        italicsLabel.fontStyle = FontStyle.Italic;
 
         GUILayout.BeginHorizontal();
         GUILayout.Space(16);

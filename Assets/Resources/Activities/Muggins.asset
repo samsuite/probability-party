@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Muggins
   m_EditorClassIdentifier: 
   description: "Play a game of Muggins (dominoes) to 100 points. The winner gets
-    one card punch.\r\n\nHere's a good video explaining the rules:\r"
+    one mark.\r\n\nHere's a good video explaining the rules:\r"
   qrLink: https://www.youtube.com/watch?v=cNU3X7XCHk0
+  image: {fileID: 0}
   tags: 1032
   exactPlayerCount: 5
   minPlayerCount: 2
